@@ -53,6 +53,8 @@
             this.cb_Grid = new System.Windows.Forms.CheckBox();
             this.btn_Drill_File_Open = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.lblFinalScale = new System.Windows.Forms.Label();
             this.lbl_Scale_Y = new System.Windows.Forms.Label();
             this.lbl_Scale_X = new System.Windows.Forms.Label();
             this.lbl_PicY = new System.Windows.Forms.Label();
@@ -69,31 +71,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn__Org_SetHole1 = new System.Windows.Forms.Button();
+            this.btn_Org_SetHole1 = new System.Windows.Forms.Button();
             this.lbl_DrillFileName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pic_Box_Res = new System.Windows.Forms.PictureBox();
-            this.gb_Rotation = new System.Windows.Forms.GroupBox();
-            this.txtScale = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txt_Offset_Y = new System.Windows.Forms.TextBox();
-            this.txt_Offset_X = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtAngle = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btn_camera_start = new System.Windows.Forms.Button();
             this.picBox_Video = new System.Windows.Forms.PictureBox();
@@ -159,25 +142,38 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pic_Box_Res = new System.Windows.Forms.PictureBox();
+            this.gb_Rotation = new System.Windows.Forms.GroupBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.txtScale = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txt_Offset_Y = new System.Windows.Forms.TextBox();
+            this.txt_Offset_X = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtAngle = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label51 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DrillNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumHoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Colour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblFinalScale = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Orig)).BeginInit();
             this.gb_DrillFile.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Res)).BeginInit();
-            this.gb_Rotation.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Video)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -185,6 +181,10 @@
             this.groupBox5.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Res)).BeginInit();
+            this.gb_Rotation.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -230,7 +230,7 @@
             this.gb_DrillFile.Controls.Add(this.cb_Grid);
             this.gb_DrillFile.Controls.Add(this.btn_Drill_File_Open);
             this.gb_DrillFile.Controls.Add(this.groupBox3);
-            this.gb_DrillFile.Controls.Add(this.btn__Org_SetHole1);
+            this.gb_DrillFile.Controls.Add(this.btn_Org_SetHole1);
             this.gb_DrillFile.Controls.Add(this.lbl_DrillFileName);
             this.gb_DrillFile.Controls.Add(this.label1);
             this.gb_DrillFile.Location = new System.Drawing.Point(11, 10);
@@ -437,6 +437,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Contents";
             // 
+            // label52
+            // 
+            this.label52.Location = new System.Drawing.Point(5, 146);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(64, 13);
+            this.label52.TabIndex = 18;
+            this.label52.Text = "FinalScale";
+            // 
+            // lblFinalScale
+            // 
+            this.lblFinalScale.Location = new System.Drawing.Point(70, 146);
+            this.lblFinalScale.Name = "lblFinalScale";
+            this.lblFinalScale.Size = new System.Drawing.Size(55, 13);
+            this.lblFinalScale.TabIndex = 17;
+            this.lblFinalScale.Text = "FinalScale";
+            // 
             // lbl_Scale_Y
             // 
             this.lbl_Scale_Y.Location = new System.Drawing.Point(133, 108);
@@ -578,15 +594,15 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "---------------";
             // 
-            // btn__Org_SetHole1
+            // btn_Org_SetHole1
             // 
-            this.btn__Org_SetHole1.Location = new System.Drawing.Point(15, 95);
-            this.btn__Org_SetHole1.Name = "btn__Org_SetHole1";
-            this.btn__Org_SetHole1.Size = new System.Drawing.Size(75, 22);
-            this.btn__Org_SetHole1.TabIndex = 2;
-            this.btn__Org_SetHole1.Text = "Set Hole 0";
-            this.btn__Org_SetHole1.UseVisualStyleBackColor = true;
-            this.btn__Org_SetHole1.Click += new System.EventHandler(this.btn_Org_SetHole1_Click);
+            this.btn_Org_SetHole1.Location = new System.Drawing.Point(15, 95);
+            this.btn_Org_SetHole1.Name = "btn_Org_SetHole1";
+            this.btn_Org_SetHole1.Size = new System.Drawing.Size(75, 22);
+            this.btn_Org_SetHole1.TabIndex = 2;
+            this.btn_Org_SetHole1.Text = "Set Hole 0";
+            this.btn_Org_SetHole1.UseVisualStyleBackColor = true;
+            this.btn_Org_SetHole1.Click += new System.EventHandler(this.btn_Org_SetHole1_Click);
             // 
             // lbl_DrillFileName
             // 
@@ -629,194 +645,6 @@
             this.tabControl1.Size = new System.Drawing.Size(507, 695);
             this.tabControl1.TabIndex = 4;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.gb_Rotation);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(499, 669);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Rotation";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.pic_Box_Res);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(2, 165);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(495, 502);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Result";
-            // 
-            // pic_Box_Res
-            // 
-            this.pic_Box_Res.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic_Box_Res.Location = new System.Drawing.Point(3, 16);
-            this.pic_Box_Res.Name = "pic_Box_Res";
-            this.pic_Box_Res.Size = new System.Drawing.Size(489, 483);
-            this.pic_Box_Res.TabIndex = 0;
-            this.pic_Box_Res.TabStop = false;
-            // 
-            // gb_Rotation
-            // 
-            this.gb_Rotation.Controls.Add(this.label53);
-            this.gb_Rotation.Controls.Add(this.txtScale);
-            this.gb_Rotation.Controls.Add(this.label16);
-            this.gb_Rotation.Controls.Add(this.label15);
-            this.gb_Rotation.Controls.Add(this.txt_Offset_Y);
-            this.gb_Rotation.Controls.Add(this.txt_Offset_X);
-            this.gb_Rotation.Controls.Add(this.label11);
-            this.gb_Rotation.Controls.Add(this.label14);
-            this.gb_Rotation.Controls.Add(this.button2);
-            this.gb_Rotation.Controls.Add(this.button1);
-            this.gb_Rotation.Controls.Add(this.txtAngle);
-            this.gb_Rotation.Controls.Add(this.label10);
-            this.gb_Rotation.Controls.Add(this.textBox2);
-            this.gb_Rotation.Controls.Add(this.textBox1);
-            this.gb_Rotation.Controls.Add(this.label12);
-            this.gb_Rotation.Controls.Add(this.label13);
-            this.gb_Rotation.Location = new System.Drawing.Point(5, 11);
-            this.gb_Rotation.Name = "gb_Rotation";
-            this.gb_Rotation.Size = new System.Drawing.Size(490, 149);
-            this.gb_Rotation.TabIndex = 4;
-            this.gb_Rotation.TabStop = false;
-            this.gb_Rotation.Text = "Rotation";
-            // 
-            // txtScale
-            // 
-            this.txtScale.Location = new System.Drawing.Point(392, 71);
-            this.txtScale.Name = "txtScale";
-            this.txtScale.Size = new System.Drawing.Size(60, 20);
-            this.txtScale.TabIndex = 23;
-            this.txtScale.Text = "1";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(352, 74);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(34, 13);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Scale";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(275, 20);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(37, 13);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "OffSet";
-            // 
-            // txt_Offset_Y
-            // 
-            this.txt_Offset_Y.Location = new System.Drawing.Point(302, 71);
-            this.txt_Offset_Y.Name = "txt_Offset_Y";
-            this.txt_Offset_Y.Size = new System.Drawing.Size(40, 20);
-            this.txt_Offset_Y.TabIndex = 20;
-            this.txt_Offset_Y.Text = "20";
-            // 
-            // txt_Offset_X
-            // 
-            this.txt_Offset_X.Location = new System.Drawing.Point(302, 46);
-            this.txt_Offset_X.Name = "txt_Offset_X";
-            this.txt_Offset_X.Size = new System.Drawing.Size(40, 20);
-            this.txt_Offset_X.TabIndex = 19;
-            this.txt_Offset_X.Text = "-20";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(275, 74);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(20, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Y: ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(275, 49);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(20, 13);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "X: ";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(196, 79);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 22);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Timer";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(106, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 20);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Render";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // txtAngle
-            // 
-            this.txtAngle.Location = new System.Drawing.Point(55, 81);
-            this.txtAngle.Name = "txtAngle";
-            this.txtAngle.Size = new System.Drawing.Size(45, 20);
-            this.txtAngle.TabIndex = 15;
-            this.txtAngle.Text = "5";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 84);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 13);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Angle ";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(119, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(40, 20);
-            this.textBox2.TabIndex = 13;
-            this.textBox2.Text = "212";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(44, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(40, 20);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "119";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(93, 58);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(20, 13);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Y: ";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(18, 58);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(20, 13);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "X: ";
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btn_camera_start);
@@ -846,10 +674,11 @@
             // 
             // picBox_Video
             // 
+            this.picBox_Video.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picBox_Video.Location = new System.Drawing.Point(8, 183);
             this.picBox_Video.Margin = new System.Windows.Forms.Padding(2);
             this.picBox_Video.Name = "picBox_Video";
-            this.picBox_Video.Size = new System.Drawing.Size(480, 292);
+            this.picBox_Video.Size = new System.Drawing.Size(480, 352);
             this.picBox_Video.TabIndex = 1;
             this.picBox_Video.TabStop = false;
             // 
@@ -861,6 +690,7 @@
             this.cmb_Camera.Name = "cmb_Camera";
             this.cmb_Camera.Size = new System.Drawing.Size(126, 21);
             this.cmb_Camera.TabIndex = 1;
+            this.cmb_Camera.SelectedIndexChanged += new System.EventHandler(this.cmb_Camera_SelectedIndexChanged);
             // 
             // groupBox4
             // 
@@ -1504,6 +1334,203 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.gb_Rotation);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(499, 669);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Rotation";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.pic_Box_Res);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Location = new System.Drawing.Point(2, 165);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(495, 502);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Result";
+            // 
+            // pic_Box_Res
+            // 
+            this.pic_Box_Res.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pic_Box_Res.Location = new System.Drawing.Point(3, 16);
+            this.pic_Box_Res.Name = "pic_Box_Res";
+            this.pic_Box_Res.Size = new System.Drawing.Size(489, 483);
+            this.pic_Box_Res.TabIndex = 0;
+            this.pic_Box_Res.TabStop = false;
+            // 
+            // gb_Rotation
+            // 
+            this.gb_Rotation.Controls.Add(this.label53);
+            this.gb_Rotation.Controls.Add(this.txtScale);
+            this.gb_Rotation.Controls.Add(this.label16);
+            this.gb_Rotation.Controls.Add(this.label15);
+            this.gb_Rotation.Controls.Add(this.txt_Offset_Y);
+            this.gb_Rotation.Controls.Add(this.txt_Offset_X);
+            this.gb_Rotation.Controls.Add(this.label11);
+            this.gb_Rotation.Controls.Add(this.label14);
+            this.gb_Rotation.Controls.Add(this.button2);
+            this.gb_Rotation.Controls.Add(this.button1);
+            this.gb_Rotation.Controls.Add(this.txtAngle);
+            this.gb_Rotation.Controls.Add(this.label10);
+            this.gb_Rotation.Controls.Add(this.textBox2);
+            this.gb_Rotation.Controls.Add(this.textBox1);
+            this.gb_Rotation.Controls.Add(this.label12);
+            this.gb_Rotation.Controls.Add(this.label13);
+            this.gb_Rotation.Location = new System.Drawing.Point(5, 11);
+            this.gb_Rotation.Name = "gb_Rotation";
+            this.gb_Rotation.Size = new System.Drawing.Size(490, 149);
+            this.gb_Rotation.TabIndex = 4;
+            this.gb_Rotation.TabStop = false;
+            this.gb_Rotation.Text = "Rotation";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(18, 40);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(82, 13);
+            this.label53.TabIndex = 24;
+            this.label53.Text = "Hole 0 Location";
+            // 
+            // txtScale
+            // 
+            this.txtScale.Location = new System.Drawing.Point(392, 71);
+            this.txtScale.Name = "txtScale";
+            this.txtScale.Size = new System.Drawing.Size(60, 20);
+            this.txtScale.TabIndex = 23;
+            this.txtScale.Text = "1";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(352, 74);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(34, 13);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Scale";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(275, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(37, 13);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "OffSet";
+            // 
+            // txt_Offset_Y
+            // 
+            this.txt_Offset_Y.Location = new System.Drawing.Point(302, 71);
+            this.txt_Offset_Y.Name = "txt_Offset_Y";
+            this.txt_Offset_Y.Size = new System.Drawing.Size(40, 20);
+            this.txt_Offset_Y.TabIndex = 20;
+            this.txt_Offset_Y.Text = "20";
+            // 
+            // txt_Offset_X
+            // 
+            this.txt_Offset_X.Location = new System.Drawing.Point(302, 46);
+            this.txt_Offset_X.Name = "txt_Offset_X";
+            this.txt_Offset_X.Size = new System.Drawing.Size(40, 20);
+            this.txt_Offset_X.TabIndex = 19;
+            this.txt_Offset_X.Text = "-20";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(275, 74);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(20, 13);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Y: ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(275, 49);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(20, 13);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "X: ";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(196, 79);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(55, 22);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Timer";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(106, 81);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 20);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Render";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // txtAngle
+            // 
+            this.txtAngle.Location = new System.Drawing.Point(55, 81);
+            this.txtAngle.Name = "txtAngle";
+            this.txtAngle.Size = new System.Drawing.Size(45, 20);
+            this.txtAngle.TabIndex = 15;
+            this.txtAngle.Text = "5";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(15, 84);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Angle ";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(119, 55);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(40, 20);
+            this.textBox2.TabIndex = 13;
+            this.textBox2.Text = "212";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(44, 55);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(40, 20);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.Text = "119";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(93, 58);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(20, 13);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Y: ";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(18, 58);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(20, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "X: ";
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.dataGridView1);
@@ -1514,15 +1541,6 @@
             this.groupBox7.TabIndex = 5;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Drill File Info";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(8, 24);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(29, 13);
-            this.label51.TabIndex = 1;
-            this.label51.Text = "Drills";
             // 
             // dataGridView1
             // 
@@ -1580,30 +1598,14 @@
             this.Colour.HeaderText = "Colour";
             this.Colour.Name = "Colour";
             // 
-            // lblFinalScale
+            // label51
             // 
-            this.lblFinalScale.Location = new System.Drawing.Point(70, 146);
-            this.lblFinalScale.Name = "lblFinalScale";
-            this.lblFinalScale.Size = new System.Drawing.Size(55, 13);
-            this.lblFinalScale.TabIndex = 17;
-            this.lblFinalScale.Text = "FinalScale";
-            // 
-            // label52
-            // 
-            this.label52.Location = new System.Drawing.Point(5, 146);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(64, 13);
-            this.label52.TabIndex = 18;
-            this.label52.Text = "FinalScale";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(18, 40);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(82, 13);
-            this.label53.TabIndex = 24;
-            this.label53.Text = "Hole 0 Location";
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(8, 24);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(29, 13);
+            this.label51.TabIndex = 1;
+            this.label51.Text = "Drills";
             // 
             // Form1
             // 
@@ -1626,11 +1628,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Res)).EndInit();
-            this.gb_Rotation.ResumeLayout(false);
-            this.gb_Rotation.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Video)).EndInit();
@@ -1642,6 +1639,11 @@
             this.tabPage4.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Res)).EndInit();
+            this.gb_Rotation.ResumeLayout(false);
+            this.gb_Rotation.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1662,7 +1664,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_NumHoles;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn__Org_SetHole1;
+        private System.Windows.Forms.Button btn_Org_SetHole1;
         private System.Windows.Forms.Label lbl_DrillFileName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;

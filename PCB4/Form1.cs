@@ -30,7 +30,7 @@ namespace PCB3
     {
         //==================== camera stuff ==========================
         // Open CV stuff =======================
-        Emgu.CV.VideoCapture _capture = null;
+        VideoCapture _capture = null;
         Image<Bgr, Byte> iFrame;
 
         double webcam_frm_cnt = 0;
@@ -468,16 +468,19 @@ namespace PCB3
                     _capture = new VideoCapture(_CameraIndex);
 
                     // todo = check incomming frame size and resize pictureBox2 to suite 
+                    //                    double width = _capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.XiWidth);
+                    //                    double height = _capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.XiHeight);
 
-                    double width = _capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.XiWidth);
-                    double height = _capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.XiHeight);
+                    double width = _capture.Width;
+                    double height = _capture.Height;
 
                     // work out ratio 
-
+                    
 
                     _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps, FrameRate);
-                    _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameHeight, 720 / 2);
-                    _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameWidth, 1280 / 2);
+                    _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameHeight, picBox_Video.Height);
+                    _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameWidth, picBox_Video.Width);
+                    
                     cmb_Camera.Enabled = false;
                     webcam_frm_cnt = 0;
                     Application.Idle += ProcessFrame;
@@ -728,6 +731,12 @@ namespace PCB3
         private void button1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmb_Camera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cmb = (ComboBox)sender;
+            _CameraIndex = cmb.SelectedIndex;
         }
     }
 }
