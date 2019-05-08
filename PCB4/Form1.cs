@@ -545,7 +545,7 @@ namespace PCB3
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_Org_SetHole2_Click(object sender, EventArgs e)
         {
             // accept this hole as hole 2!  
             if (currentHole != null && currentHole != holeZero)
@@ -556,7 +556,7 @@ namespace PCB3
                 checkBothHolesSelected();
             }
         }
-        private void btn__DrillFileLoad_Click(object sender, EventArgs e)
+        private void btn_Org_SetHole1_Click(object sender, EventArgs e)
         {
             // accept this hole as hole Zero!  
             if (currentHole != null)

@@ -40,7 +40,7 @@
             this.lbl_Hole2_X = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_Org_SetHole2 = new System.Windows.Forms.Button();
             this.cb_Flip = new System.Windows.Forms.CheckBox();
             this.lblHoleFound = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn__DrillFileLoad = new System.Windows.Forms.Button();
+            this.btn__Org_SetHole1 = new System.Windows.Forms.Button();
             this.lbl_DrillFileName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -206,7 +206,7 @@
             this.gb_DrillFile.Controls.Add(this.lbl_Hole2_X);
             this.gb_DrillFile.Controls.Add(this.label40);
             this.gb_DrillFile.Controls.Add(this.label41);
-            this.gb_DrillFile.Controls.Add(this.button3);
+            this.gb_DrillFile.Controls.Add(this.btn_Org_SetHole2);
             this.gb_DrillFile.Controls.Add(this.cb_Flip);
             this.gb_DrillFile.Controls.Add(this.lblHoleFound);
             this.gb_DrillFile.Controls.Add(this.label9);
@@ -217,7 +217,7 @@
             this.gb_DrillFile.Controls.Add(this.cb_Grid);
             this.gb_DrillFile.Controls.Add(this.btn_Drill_File_Open);
             this.gb_DrillFile.Controls.Add(this.groupBox3);
-            this.gb_DrillFile.Controls.Add(this.btn__DrillFileLoad);
+            this.gb_DrillFile.Controls.Add(this.btn__Org_SetHole1);
             this.gb_DrillFile.Controls.Add(this.lbl_DrillFileName);
             this.gb_DrillFile.Controls.Add(this.label1);
             this.gb_DrillFile.Location = new System.Drawing.Point(11, 10);
@@ -299,15 +299,15 @@
             this.label41.TabIndex = 14;
             this.label41.Text = "X: ";
             // 
-            // button3
+            // btn_Org_SetHole2
             // 
-            this.button3.Location = new System.Drawing.Point(137, 95);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 22);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Set Hole 2";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_Org_SetHole2.Location = new System.Drawing.Point(137, 95);
+            this.btn_Org_SetHole2.Name = "btn_Org_SetHole2";
+            this.btn_Org_SetHole2.Size = new System.Drawing.Size(75, 22);
+            this.btn_Org_SetHole2.TabIndex = 13;
+            this.btn_Org_SetHole2.Text = "Set Hole 2";
+            this.btn_Org_SetHole2.UseVisualStyleBackColor = true;
+            this.btn_Org_SetHole2.Click += new System.EventHandler(this.btn_Org_SetHole2_Click);
             // 
             // cb_Flip
             // 
@@ -563,15 +563,15 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "---------------";
             // 
-            // btn__DrillFileLoad
+            // btn__Org_SetHole1
             // 
-            this.btn__DrillFileLoad.Location = new System.Drawing.Point(15, 95);
-            this.btn__DrillFileLoad.Name = "btn__DrillFileLoad";
-            this.btn__DrillFileLoad.Size = new System.Drawing.Size(75, 22);
-            this.btn__DrillFileLoad.TabIndex = 2;
-            this.btn__DrillFileLoad.Text = "Set Hole 0";
-            this.btn__DrillFileLoad.UseVisualStyleBackColor = true;
-            this.btn__DrillFileLoad.Click += new System.EventHandler(this.btn__DrillFileLoad_Click);
+            this.btn__Org_SetHole1.Location = new System.Drawing.Point(15, 95);
+            this.btn__Org_SetHole1.Name = "btn__Org_SetHole1";
+            this.btn__Org_SetHole1.Size = new System.Drawing.Size(75, 22);
+            this.btn__Org_SetHole1.TabIndex = 2;
+            this.btn__Org_SetHole1.Text = "Set Hole 0";
+            this.btn__Org_SetHole1.UseVisualStyleBackColor = true;
+            this.btn__Org_SetHole1.Click += new System.EventHandler(this.btn_Org_SetHole1_Click);
             // 
             // lbl_DrillFileName
             // 
@@ -603,10 +603,10 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(562, 17);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
@@ -1550,7 +1550,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_NumHoles;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn__DrillFileLoad;
+        private System.Windows.Forms.Button btn__Org_SetHole1;
         private System.Windows.Forms.Label lbl_DrillFileName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
@@ -1642,7 +1642,7 @@
         private System.Windows.Forms.Label lbl_Hole2_X;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_Org_SetHole2;
         private System.Windows.Forms.Label lblCamAngle;
         private System.Windows.Forms.Label lblCamDist;
         private System.Windows.Forms.Label label42;
