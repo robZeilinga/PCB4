@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pic_Box_Orig = new System.Windows.Forms.PictureBox();
             this.gb_DrillFile = new System.Windows.Forms.GroupBox();
@@ -158,6 +160,15 @@
             this.label38 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DrillNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumHoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Colour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblFinalScale = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Orig)).BeginInit();
             this.gb_DrillFile.SuspendLayout();
@@ -174,6 +185,8 @@
             this.groupBox5.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -399,6 +412,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label52);
+            this.groupBox3.Controls.Add(this.lblFinalScale);
             this.groupBox3.Controls.Add(this.lbl_Scale_Y);
             this.groupBox3.Controls.Add(this.lbl_Scale_X);
             this.groupBox3.Controls.Add(this.lbl_PicY);
@@ -649,6 +664,7 @@
             // 
             // gb_Rotation
             // 
+            this.gb_Rotation.Controls.Add(this.label53);
             this.gb_Rotation.Controls.Add(this.txtScale);
             this.gb_Rotation.Controls.Add(this.label16);
             this.gb_Rotation.Controls.Add(this.label15);
@@ -677,7 +693,7 @@
             this.txtScale.Name = "txtScale";
             this.txtScale.Size = new System.Drawing.Size(60, 20);
             this.txtScale.TabIndex = 23;
-            this.txtScale.Text = "0.9844";
+            this.txtScale.Text = "1";
             // 
             // label16
             // 
@@ -748,6 +764,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Render";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txtAngle
             // 
@@ -768,7 +785,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(41, 55);
+            this.textBox2.Location = new System.Drawing.Point(119, 55);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(40, 20);
             this.textBox2.TabIndex = 13;
@@ -776,7 +793,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(41, 30);
+            this.textBox1.Location = new System.Drawing.Point(44, 55);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(40, 20);
             this.textBox1.TabIndex = 12;
@@ -785,7 +802,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 58);
+            this.label12.Location = new System.Drawing.Point(93, 58);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(20, 13);
             this.label12.TabIndex = 11;
@@ -794,7 +811,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 33);
+            this.label13.Location = new System.Drawing.Point(18, 58);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(20, 13);
             this.label13.TabIndex = 10;
@@ -1489,12 +1506,104 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.dataGridView1);
+            this.groupBox7.Controls.Add(this.label51);
             this.groupBox7.Location = new System.Drawing.Point(1079, 42);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(382, 381);
             this.groupBox7.TabIndex = 5;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Drill File Info";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(8, 24);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(29, 13);
+            this.label51.TabIndex = 1;
+            this.label51.Text = "Drills";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DrillNum,
+            this.Size,
+            this.NumHoles,
+            this.Colour});
+            this.dataGridView1.Location = new System.Drawing.Point(20, 44);
+            this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.Size = new System.Drawing.Size(356, 81);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // DrillNum
+            // 
+            this.DrillNum.HeaderText = "#";
+            this.DrillNum.Name = "DrillNum";
+            this.DrillNum.Width = 50;
+            // 
+            // Size
+            // 
+            this.Size.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Size.HeaderText = "Size";
+            this.Size.Name = "Size";
+            this.Size.Width = 56;
+            // 
+            // NumHoles
+            // 
+            this.NumHoles.HeaderText = "Num Holes";
+            this.NumHoles.Name = "NumHoles";
+            // 
+            // Colour
+            // 
+            this.Colour.HeaderText = "Colour";
+            this.Colour.Name = "Colour";
+            // 
+            // lblFinalScale
+            // 
+            this.lblFinalScale.Location = new System.Drawing.Point(70, 146);
+            this.lblFinalScale.Name = "lblFinalScale";
+            this.lblFinalScale.Size = new System.Drawing.Size(55, 13);
+            this.lblFinalScale.TabIndex = 17;
+            this.lblFinalScale.Text = "FinalScale";
+            // 
+            // label52
+            // 
+            this.label52.Location = new System.Drawing.Point(5, 146);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(64, 13);
+            this.label52.TabIndex = 18;
+            this.label52.Text = "FinalScale";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(18, 40);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(82, 13);
+            this.label53.TabIndex = 24;
+            this.label53.Text = "Hole 0 Location";
             // 
             // Form1
             // 
@@ -1533,6 +1642,9 @@
             this.tabPage4.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1668,6 +1780,15 @@
         private System.Windows.Forms.TextBox txtCameraOffsetY;
         private System.Windows.Forms.TextBox txtCameraOffsetX;
         private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DrillNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumHoles;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Colour;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label lblFinalScale;
+        private System.Windows.Forms.Label label53;
     }
 }
 

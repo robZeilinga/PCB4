@@ -33,7 +33,7 @@ namespace PCB3
 
         public DrillJob2(string drillFileName)
         {
-            Pen[] pens = new Pen[] { Pens.Black, Pens.Brown, Pens.Red, Pens.Orange, Pens.Yellow, Pens.Green, Pens.Blue, Pens.Violet };
+            Pen[] pens = new Pen[] { Pens.Black, Pens.Blue, Pens.Red, Pens.Green, Pens.Orange, Pens.Yellow,  Pens.Violet, Pens.Brown };
             DrillColours = new Dictionary<int, Pen>();
 
 
@@ -87,7 +87,7 @@ namespace PCB3
                 {
                     for (int x = 0; x < Drills.Count; x++)
                     {
-                        DrillColours.Add(x, pens[x]);
+                        DrillColours.Add(x+1, pens[x]);
                     }
                     // end
 
