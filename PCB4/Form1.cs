@@ -24,7 +24,7 @@ using System.Windows.Forms;
 
 */
 
-namespace PCB3
+namespace PCB4
 {
     public partial class Form1 : Form
     {
@@ -68,16 +68,20 @@ namespace PCB3
         Hole hole2;
         DrillJob2 dj2;
 
-        Graphics g1;
+        Graphics gDrillFileHolePlot;
         Graphics g2;
+        Graphics gSimulatePicBox;
 
 
         static Color defaultPenColor = Color.AliceBlue;
         public Form1()
         {
             InitializeComponent();
-            Graphics g1 = Graphics.FromHwnd(pic_Box_Orig.Handle);
-            Graphics g2 = Graphics.FromHwnd(pic_Box_Res.Handle);
+            gDrillFileHolePlot = Graphics.FromHwnd(pic_Box_Orig.Handle);
+            g2 = Graphics.FromHwnd(pic_Box_Res.Handle);
+            gSimulatePicBox = Graphics.FromHwnd(picBox_Simulate.Handle);
+            SerialControlForm frm = new SerialControlForm("First",1);
+            frm.Show();
         }
 
         private void Form1_ResizeEnd(object sender, EventArgs e)
@@ -148,13 +152,13 @@ namespace PCB3
 
             // add 1 mm to max X & Y to generate next ruler point (beyond PCB) 
 
-            double xScale = (dj2.dMAX_X + 1.0) / (pic_Box_Orig.Width - (frame * 2));
-            double yScale = (dj2.dMAX_Y + 1.0) / (pic_Box_Orig.Height - (frame * 2));
+            double xScale = (dj2.dMAX_X + 10.0) / (pic_Box_Orig.Width - (frame * 1.5));
+            double yScale = (dj2.dMAX_Y + 10.0) / (pic_Box_Orig.Height - (frame * 1.5));
 
             lbl_Scale_X.Text = xScale.ToString(fmt);
             lbl_Scale_Y.Text = yScale.ToString(fmt);
 
-            if(xScale > yScale)
+            if (xScale > yScale)
             {
                 lblFinalScale.Text = xScale.ToString(fmt);
                 Pic1_Scale = xScale;
@@ -167,11 +171,11 @@ namespace PCB3
 
 
 
-            if (g1 == null) g1 = Graphics.FromHwnd(pic_Box_Orig.Handle);
+            if (gDrillFileHolePlot == null) gDrillFileHolePlot = Graphics.FromHwnd(pic_Box_Orig.Handle);
             if (g2 == null) g2 = Graphics.FromHwnd(pic_Box_Res.Handle);
 
-            draw_Rulers(g1, Convert.ToInt16(dj2.dMAX_X + 1 ), Convert.ToInt16(dj2.dMAX_X + 1.0), pic_Box_Orig);
-            draw_Rulers(g2, Convert.ToInt16(dj2.dMAX_X + 1), Convert.ToInt16(dj2.dMAX_X + 1.0), pic_Box_Res);
+            draw_Rulers(gDrillFileHolePlot, Convert.ToInt16(dj2.dMAX_X + 10), Convert.ToInt16(dj2.dMAX_Y + 10.0), pic_Box_Orig);
+            //draw_Rulers(g2, Convert.ToInt16(dj2.dMAX_X + 1), Convert.ToInt16(dj2.dMAX_Y + 1.0), pic_Box_Res);
 
 
 
@@ -185,7 +189,7 @@ namespace PCB3
         private void displayDrillInfo(DrillJob2 dj2)
         {
             int gridHeight = 25;
-            foreach(KeyValuePair<int,double> kvp in dj2.Drills)
+            foreach (KeyValuePair<int, double> kvp in dj2.Drills)
             {
                 // get number of holes for this drill
                 int num = dj2.DrillCount[kvp.Key];
@@ -214,17 +218,21 @@ namespace PCB3
             dataGridView1.Height = gridHeight;
         }
 
-        private Point DrawHole(Graphics g, PictureBox picBox, double ResolvedX, double ResolvedY, double holeSize, Pen pen, double scale)
+        private Point DrawHole(Graphics g, PictureBox picBox, double ResolvedX, double ResolvedY, double holeSize, Pen pen, double scale, bool FlipY = false)
         {
             Point retVal = new Point();
 
-            double tx = (ResolvedX * spacing);
-            double ty = (ResolvedY * spacing);
+            double tx = (ResolvedX / scale);
+            double ty = (ResolvedY / scale);
 
 
             int plotx = (int)tx + frame - 1;
-            int ploty = picBox.Height - frame - (int)ty - 1;
-            holeSize = (holeSize * spacing)/5;
+            int ploty = (int)ty - 1;
+            if (!FlipY)
+            {
+                ploty = picBox.Height - frame - (int)ty - 1;
+            }
+            holeSize = (holeSize /  scale) ;
 
             retVal = new Point(plotx, ploty);
 
@@ -233,13 +241,14 @@ namespace PCB3
             return retVal;
         }
 
+
         private void drawHoles(DrillJob2 dj2, int spacing, int frame, double scale)
         {
-            if (g1 == null) g1 = Graphics.FromHwnd(pic_Box_Orig.Handle);
+            if (gDrillFileHolePlot == null) gDrillFileHolePlot = Graphics.FromHwnd(pic_Box_Orig.Handle);
             foreach (Hole hle in dj2.Holes)
             {
 
-                hle.plot_Point = DrawHole(g1, pic_Box_Orig, hle.ResolvedX, hle.ResolvedY, dj2.Drills[hle.ToolNum], dj2.DrillColours[hle.ToolNum], scale);
+                hle.plot_Point = DrawHole(gDrillFileHolePlot, pic_Box_Orig, hle.ResolvedX, hle.ResolvedY, dj2.Drills[hle.ToolNum], dj2.DrillColours[hle.ToolNum], scale);
 
             }
         }
@@ -264,8 +273,8 @@ namespace PCB3
                                 : 485 / 80.145 =  6.05  == every point is 6 pixels 
             */
 
-            Pen p = Pens.LightGray;
-            g.Clear(Color.DarkGray);
+            Pen p = new Pen(Color.DarkGray, 1f);
+            g.Clear(Color.LightGray);
 
             int plotarea_x = picBox.Width - (int)(frame * 1.5);
             int spacing_x = plotarea_x / maxX;
@@ -282,7 +291,7 @@ namespace PCB3
 
             // draw ticks 
             // y ticks 
-            for (int yt = 0; yt <= maxY; yt = yt + 10)
+            for (int yt = 0; yt <= maxY+10; yt = yt + 10)
             {
                 // so line is from Frame-tickLength to Frame or picboxWidth-Frame(1.5)
                 // height = picBoxHeight -frame - (spacing * yt)
@@ -290,17 +299,17 @@ namespace PCB3
                 Point p2 = new Point(frame, picBox.Height - frame - (spacing * yt));
                 if (cb_Grid.Checked) p2 = new Point(picBox.Width - (frame / 2), picBox.Height - frame - (spacing * yt));
                 g.DrawLine(p, p1, p2);
-                g.DrawString(yt.ToString(), new Font(FontFamily.GenericMonospace, 9f), new SolidBrush(Color.Gray), new Point(0, picBox.Height - frame - (spacing * yt)));
+                g.DrawString(yt.ToString(), new Font(FontFamily.GenericMonospace, 9f), new SolidBrush(Color.DarkGray), new Point(0, picBox.Height - frame - (spacing * yt)));
             }
             // x ticks 
-            for (int xt = 0; xt <= maxX; xt = xt + 10)
+            for (int xt = 0; xt <= maxX+ 10; xt = xt + 10)
             {
                 // so line is from picBox.Height - Frame + tickLength to (Frame/2) or picboxHeight-Frame
                 // X pos = frame + (spacing * xt)
                 Point p1 = new Point(frame + (spacing * xt), picBox.Height - frame + tickLength);
                 Point p2 = new Point(frame + (spacing * xt), picBox.Height - frame);
 
-                g.DrawString(xt.ToString(), new Font(FontFamily.GenericMonospace, 9f), new SolidBrush(Color.Gray), new Point(frame + (spacing * xt) - 10, picBox.Height - 18));
+                g.DrawString(xt.ToString(), new Font(FontFamily.GenericMonospace, 9f), new SolidBrush(Color.DarkGray), new Point(frame + (spacing * xt) - 10, picBox.Height - 18));
                 if (cb_Grid.Checked) p2 = new Point(frame + (spacing * xt), frame);
 
                 g.DrawLine(p, p1, p2);
@@ -340,16 +349,19 @@ namespace PCB3
                         else
                         {
                         */
-                        lblHoleFound.Text = " Hole x : " + hle.ResolvedX.ToString() + "  y: " + hle.ResolvedY.ToString() + ":" + hle.plot_Point.X + " | " + hle.plot_Point.Y;
-                        DrawHole(g1, pic_Box_Orig, hle.ResolvedX, hle.ResolvedY, dj2.Drills[hle.ToolNum] + 0.2, p, Pic1_Scale);
+                        lblHoleFound.Text = " Hole x : " + hle.ResolvedX.ToString() + "  y: " + hle.ResolvedY.ToString() +  "[" + hle.ToolNum.ToString()+"]";
+                        DrawHole(gDrillFileHolePlot, pic_Box_Orig, hle.ResolvedX, hle.ResolvedY, dj2.Drills[hle.ToolNum] + 0.2, p, Pic1_Scale);
                         /*
                         }
                         */
                         currentHole = hle;
                         break;
                     }
+                    else
+                    {
+                        lblHoleFound.Text = "False";
+                    }
                 }
-                lblHoleFound.Text = "False";
             }
         }
 
@@ -389,14 +401,36 @@ namespace PCB3
                 hle.HoleZero = currentHole;
                 hle.rotationAngle = angle;
                 hle.scale = 1.0;
-                hle.rotate(angle, scale, xOffset, yOffset);
+                hle.rotate(angle, xOffset, yOffset, scale);
                 DrawRotatedHole(hle);
             }
         }
 
+        private Point DrawRotatedHole(Hole hle, Graphics g, PictureBox pb)
+        {
+            //Console.WriteLine("Drawing Hole @ " + hle.RotatedX + ", " + hle.RotatedY);
+            return DrawHole(g, pb, hle.RotatedX, hle.RotatedY, dj2.Drills[hle.ToolNum], dj2.DrillColours[hle.ToolNum], Pic1_Scale);
+        }
+
+        private Point DrawSimulateHole(Hole hle, Graphics g, PictureBox pb)
+        {
+            Point retVal = new Point();
+            if (chkSimFlip.Checked)
+            {
+                retVal = DrawHole(g, pb, hle.RotatedX, hle.RotatedY, dj2.Drills[hle.ToolNum], dj2.DrillColours[hle.ToolNum], Pic1_Scale, true);
+            }
+            else
+            {
+                retVal = DrawHole(g, pb, hle.RotatedX, hle.RotatedY, dj2.Drills[hle.ToolNum], dj2.DrillColours[hle.ToolNum], Pic1_Scale, false);
+            }
+            return retVal;
+        }
+
+
+
         private void DrawRotatedHole(Hole hle)
         {
-            DrawHole(g2, pic_Box_Res, hle.RotatedX, hle.RotatedY, dj2.Drills[hle.ToolNum], dj2.DrillColours[hle.ToolNum - 1], Pic1_Scale);
+            DrawHole(g2, pic_Box_Res, hle.RotatedX, hle.RotatedY, dj2.Drills[hle.ToolNum], dj2.DrillColours[hle.ToolNum], Pic1_Scale);
         }
 
         private double AngleToRadians(double angle)
@@ -475,12 +509,12 @@ namespace PCB3
                     double height = _capture.Height;
 
                     // work out ratio 
-                    
+
 
                     _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps, FrameRate);
                     _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameHeight, picBox_Video.Height);
                     _capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameWidth, picBox_Video.Width);
-                    
+
                     cmb_Camera.Enabled = false;
                     webcam_frm_cnt = 0;
                     Application.Idle += ProcessFrame;
@@ -583,7 +617,7 @@ namespace PCB3
 
         private void btn_Offset_Save_Click(object sender, EventArgs e)
         {
-            if( txtCameraOffsetX.Text.Trim() != "" && txtCameraOffsetY.Text.Trim() != "")
+            if (txtCameraOffsetX.Text.Trim() != "" && txtCameraOffsetY.Text.Trim() != "")
             {
                 Offset_X = double.Parse(txtCameraOffsetX.Text.Trim());
                 Offset_Y = double.Parse(txtCameraOffsetY.Text.Trim());
@@ -601,7 +635,7 @@ namespace PCB3
             {
                 hole2 = currentHole;
                 lbl_Hole2_X.Text = currentHole.ResolvedX.ToString();
-//                lbl_Hole2_Y.Text = currentHole.FlippedResolvedY.ToString();
+                //                lbl_Hole2_Y.Text = currentHole.FlippedResolvedY.ToString();
                 lbl_Hole2_Y.Text = currentHole.ResolvedY.ToString();
                 checkBothHolesSelected();
             }
@@ -613,7 +647,7 @@ namespace PCB3
             {
                 holeZero = currentHole;
                 lbl_Click_X.Text = currentHole.ResolvedX.ToString();
-//                lbl_Click_Y.Text = currentHole.FlippedResolvedY.ToString();
+                //                lbl_Click_Y.Text = currentHole.FlippedResolvedY.ToString();
                 lbl_Click_Y.Text = currentHole.ResolvedY.ToString();
                 checkBothHolesSelected();
             }
@@ -661,7 +695,7 @@ namespace PCB3
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btn_GenFile_Click(object sender, EventArgs e)
         {
 
             // hole Zero from Camera
@@ -683,11 +717,11 @@ namespace PCB3
             {
 
                 string safeZHeight = dSafeZHeight.ToString("0.000");
-                string drillDepth =  dDrillDepth.ToString("0.000");
+                string drillDepth = dDrillDepth.ToString("0.000");
                 double _offsetX = 0.0;
                 double _offsetY = 0.0;
 
-                if(cb_Drill.Checked)
+                if (cb_Drill.Checked)
                 {
                     _offsetX = Offset_X;
                     _offsetY = Offset_Y;
@@ -704,8 +738,8 @@ namespace PCB3
                 richTextBox1.AppendText("G0 Z" + safeZHeight + System.Environment.NewLine);
                 richTextBox1.AppendText("; ---------------------------------" + System.Environment.NewLine);
                 richTextBox1.AppendText("; Hole Zero " + System.Environment.NewLine);
-                richTextBox1.AppendText("G0 X" + (holeZero.ResolvedX + Gcode_Offset_X + _offsetX).ToString("0.000") + " Y" + (holeZero.FlippedResolvedY + Gcode_Offset_Y-0.6+_offsetY).ToString("0.000") + System.Environment.NewLine);
-                richTextBox1.AppendText("G0 Z" + drillDepth +  System.Environment.NewLine);
+                richTextBox1.AppendText("G0 X" + (holeZero.ResolvedX + Gcode_Offset_X + _offsetX).ToString("0.000") + " Y" + (holeZero.FlippedResolvedY + Gcode_Offset_Y - 0.6 + _offsetY).ToString("0.000") + System.Environment.NewLine);
+                richTextBox1.AppendText("G0 Z" + drillDepth + System.Environment.NewLine);
                 richTextBox1.AppendText("G0 Z" + safeZHeight + System.Environment.NewLine);
 
                 //richTextBox1.AppendText("G4 0.5" + System.Environment.NewLine);
@@ -716,8 +750,8 @@ namespace PCB3
                     hle.HoleZero = holeZero;
                     hle.rotationAngle = result_angle;
                     hle.scale = result_Scale;
-                    hle.rotate(angle, result_Scale, 0, 0);
-                    richTextBox1.AppendText("G0 X" + (hle.RotatedX + Gcode_Offset_X+_offsetX).ToString("0.000") + " Y" + (hle.RotatedY + Gcode_Offset_Y-0.6+_offsetY).ToString("0.000") + System.Environment.NewLine);
+                    hle.rotate(angle, 0, 0, result_Scale);
+                    richTextBox1.AppendText("G0 X" + (hle.RotatedX + Gcode_Offset_X + _offsetX).ToString("0.000") + " Y" + (hle.RotatedY + Gcode_Offset_Y - 0.6 + _offsetY).ToString("0.000") + System.Environment.NewLine);
                     //richTextBox1.AppendText("G4 0.5" + System.Environment.NewLine);
                     richTextBox1.AppendText("G0 Z" + drillDepth + System.Environment.NewLine);
                     richTextBox1.AppendText("G0 Z" + safeZHeight + System.Environment.NewLine);
@@ -737,6 +771,60 @@ namespace PCB3
         {
             ComboBox cmb = (ComboBox)sender;
             _CameraIndex = cmb.SelectedIndex;
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_RunSimulate_Click(object sender, EventArgs e)
+        {
+            gSimulatePicBox.Clear(Color.White);
+            Point lastPoint = new Point(0, picBox_Simulate.Height);
+            if(txtSimHole0X.Text == "" || txtSimHole0Y.Text == "")
+            {
+                MessageBox.Show("Hole Zero Position not Set, Click on Area to set");
+                return;
+            }
+               
+            // draw holes in Simulaation area, including CNC borders.
+
+            foreach (Hole hle in dj2.Holes)
+            {
+                if (hle.HoleZero == null) hle.HoleZero = holeZero;
+                
+                    if (txt_OverrideRotate.Text != "0.0" && txt_OverrideRotate.Text != "0" && txt_OverrideRotate.Text.Trim() != "")
+                    {
+                        double rot = 1.0;
+                        double.TryParse(txt_OverrideRotate.Text, out rot);
+                        hle.rotate(rot);
+                    }
+                    Point p = DrawSimulateHole(hle, gSimulatePicBox, picBox_Simulate);
+                    if (chk_DrawMovement.Checked)
+                    {
+                        gSimulatePicBox.DrawLine(new Pen(Color.DarkRed, 1f), lastPoint, p);
+                        lastPoint = p;
+                    }
+                
+            }
+        }
+
+        private void picBox_Simulate_Click(object sender, EventArgs e)
+        {
+//            PictureBox pb = (PictureBox)sender;
+            
+        }
+
+        private void picBox_Simulate_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtSimHole0X.Text = e.X.ToString();
+            txtSimHole0Y.Text = e.Y.ToString();
+        }
+
+        private void txtSimHole0Y_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

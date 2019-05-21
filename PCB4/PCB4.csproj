@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,9 +71,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="gcodeRelated.cs" />
+    <Compile Include="grblRelated.cs" />
     <Compile Include="Hole.cs" />
+    <Compile Include="mainObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SerialControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SerialControlForm.Designer.cs">
+      <DependentUpon>SerialControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Units.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -86,6 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SerialControlForm.resx">
+      <DependentUpon>SerialControlForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,6 +109,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\alarm_codes_en_US.csv" />
+    <None Include="Resources\error_codes_en_US.csv" />
+    <None Include="Resources\setting_codes_en_US.csv" />
     <None Include="Timer2_5v_PDIP_v5_no_eeprom_Fill.drd" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +119,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="License-LGPL.txt" />
+    <Content Include="Resources\btn_pause.png" />
+    <Content Include="Resources\btn_play.png" />
+    <Content Include="Resources\btn_stop.png" />
+    <Content Include="Resources\fctb_hotkeys.txt" />
+    <Content Include="Resources\flip_horizontal.png" />
+    <Content Include="Resources\flip_vertical.png" />
+    <Content Include="Resources\Icon.ico" />
+    <Content Include="Resources\Image1.bmp" />
+    <Content Include="Resources\inv2.png" />
+    <Content Include="Resources\modell.png" />
+    <Content Include="Resources\turn_l.png" />
+    <Content Include="Resources\turn_r.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\EMGU.CV.3.4.3.3016\build\EMGU.CV.targets" Condition="Exists('..\packages\EMGU.CV.3.4.3.3016\build\EMGU.CV.targets')" />

@@ -1,17 +1,36 @@
 ﻿using System;
 using System.Drawing;
 
-namespace PCB3
+namespace PCB4
 {
     public class Hole
     {
+        /// <summary>
+        /// which tool - drill size for this hole
+        /// </summary>
         public int ToolNum { get; set; }
+
+        /// <summary>
+        /// Metric or Emperial 
+        /// </summary>
         public Units HoleUnit { get; set; }
+
+        /// <summary>
+        /// actual x & y points from drd file.
+        /// </summary>
         public Point FilePoint  { get; set; }
 
+        /// <summary>
+        /// Zero Hole References  (which everything revolves around) 
+        /// </summary>
+        public Hole HoleZero{ get; set; }
         public Point ZeroPoint { get; set; }
 
         private Point flippedFilePoint;
+
+        /// <summary>
+        /// flipped Y ( turning PCB over to show Tracks)  
+        /// </summary>
         public Point FlippedFilePoint
         {
             get
@@ -34,93 +53,140 @@ namespace PCB3
             }
         }
 
-
+        /// <summary>
+        /// resolved locations are those that have been converted back to base units from File units 10 000 mm or 100 000 inch
+        /// </summary>
+        
         public double ResolvedX { get; set; }
+        /// <summary>
+        /// resolved locations are those that have been converted back to base units from File units 10 000 mm or 100 000 inch
+        /// </summary>
         public double ResolvedY { get; set; }
+        /// <summary>
+        /// resolved locations are those that have been converted back to base units from File units 10 000 mm or 100 000 inch
+        /// </summary>
         public double FlippedResolvedY { get; set; }
-        public Hole HoleZero{ get; set; }
-        public double rotationAngle { get; set; }
+
+        /// <summary>
+        /// placeholder for scale (should always be 1 )
+        /// </summary>
         public double scale { get; set; }
+
+
+        /// <summary>
+        /// Rotation angle  
+        /// </summary>
+        public double rotationAngle { get; set; }
+
+        /// <summary>
+        /// Rotated X location 
+        /// </summary>
         public double RotatedX { get; set; }
+        /// <summary>
+        /// Rotated Y location 
+        /// </summary>
         public double RotatedY { get; set; }
+        /// <summary>
+        /// Rotated and Flipped Y location 
+        /// </summary>
         public double FlippedRotatedY { get; set; }
 
-
-
+        /// <summary>
+        /// point where the gui has plotted this hole on the picture box, helps identify which hole was clicked on from the click event data.
+        /// </summary>
         public Point plot_Point  { get; set; }
 
-      
-        public Hole(string line, int toolNum, Units fileUnits)
+        // -----------------------------------------------------------------------------------------------------------------------
+        public Hole(double X, double Y, int toolnum, Units fileUnits)
         {
-
-            //HoleZero = false;
-            ToolNum = toolNum;
-            line = line.Trim().Substring(1);  // remove leading X;
-            string[] parts = line.Split(new char[] { 'Y' });
-            FilePoint = new Point(int.Parse(parts[0]), int.Parse(parts[1]));
-            HoleUnit = fileUnits;
-            // resolve from point.
-            if(HoleUnit == Units.METRIC)
-            {
-                // 10,000 th of  MM
-                ResolvedX = double.Parse(parts[0]) / 10000;
-                ResolvedY = double.Parse(parts[1]) / 10000;
-            }
-            else
-            {
-                // 100,000 th of INCH
-                ResolvedX = double.Parse(parts[0]) / 100000;
-                ResolvedY = double.Parse(parts[1]) / 100000;
-            }
+            CreateHole(X, Y, toolnum, fileUnits);
         }
 
-        public void rotate(double rotAngle, double scale = 1, int xOffset = 0, int yOffset = 0)
+        public Hole(string line, int toolNum, Units fileUnits)
         {
-            //scale = 1.0;
-            rotationAngle = rotAngle;
+            line = line.Trim().Substring(1);  // remove leading X;
+            string[] parts = line.Split(new char[] { 'Y' });
+            CreateHole(double.Parse(parts[0]), double.Parse(parts[1]), toolNum, fileUnits);
+        }
+
+        /// <summary>
+        /// perform rotation of point araound the Zero hole - Throws Exception if Hole Zero is null
+        /// </summary>
+        /// <param name="rotAngle"></param>
+        /// <param name="xOffset"></param>
+        /// <param name="yOffset"></param>
+        /// <param name="scale"></param>
+        public void rotate(double rotAngle, int xOffset = 0, int yOffset = 0, double scale = 1)
+        {
+            if(this.HoleZero == null)
+            {
+                throw new Exception("Cannot Rotate Hole, Hole xero not set");
+            }
+
+            this.rotationAngle = rotAngle;
 
             if (ResolvedX == HoleZero.ResolvedX && ResolvedY == HoleZero.ResolvedY)
             {
                 // hole zero 
-                RotatedX = ResolvedX + xOffset;
-                RotatedY = ResolvedY + yOffset;
-                FlippedRotatedY = FlippedResolvedY + yOffset;
-                //if (flipped) RotatedY = flippedResolvedY + yOffset;
-
+                this.RotatedX = ResolvedX + xOffset;
+                this.RotatedY = ResolvedY + yOffset;
+                this.FlippedRotatedY = FlippedResolvedY + yOffset;
             }
             else
             {
                 double xDiff = ResolvedX - HoleZero.ResolvedX;
                 double yDiff = ResolvedY - HoleZero.ResolvedY;
-                double f_yDiff = FlippedResolvedY - HoleZero.FlippedResolvedY;
+                double flipped_yDiff = FlippedResolvedY - HoleZero.FlippedResolvedY;
 
-                //if (flipped) yDiff = flippedResolvedY - HoleZero.flippedResolvedY;
-                double angle = Math.Atan2(yDiff, xDiff) * 180.0 / Math.PI;
-                double f_angle = Math.Atan2(f_yDiff, xDiff) * 180.0 / Math.PI;
+                double original_hole_angle = Math.Atan2(yDiff, xDiff) * 180.0 / Math.PI;
+                double flipped_angle = Math.Atan2(flipped_yDiff, xDiff) * 180.0 / Math.PI;
                 double dist1 = Math.Sqrt(Math.Pow(yDiff, 2) + Math.Pow(xDiff, 2));
-                double f_dist1 = Math.Sqrt(Math.Pow(f_yDiff, 2) + Math.Pow(xDiff, 2));
+                double flipped_dist1 = Math.Sqrt(Math.Pow(flipped_yDiff, 2) + Math.Pow(xDiff, 2));
                 if (scale != 1) dist1 = dist1 * scale;
-                if (scale != 1) f_dist1 = f_dist1 * scale;
+                if (scale != 1) flipped_dist1 = flipped_dist1 * scale;
 
 
-                // add angle
-                angle += rotationAngle;
-                // offset 
+                // Calculate Final Rotation Angle for This Hole
+                double finalRotationAngleInRadians = AngleToRadians(original_hole_angle + this.rotationAngle);
+                
+                // Calculate offset of this hole === final position 
+                double Xoffset = HoleZero.ResolvedX + dist1 * Math.Cos(finalRotationAngleInRadians);
+                double Yoffset = HoleZero.ResolvedY + dist1 * Math.Sin(finalRotationAngleInRadians);
+                double FlippedYoffset = HoleZero.FlippedResolvedY + flipped_dist1 * Math.Sin(finalRotationAngleInRadians);
 
-                double Xoffset = HoleZero.ResolvedX + dist1 * Math.Cos(AngleToRadians(angle));
-                double Yoffset = HoleZero.ResolvedY + dist1 * Math.Sin(AngleToRadians(angle));
-                double FlippedYoffset = HoleZero.FlippedResolvedY + f_dist1 * Math.Sin(AngleToRadians(angle));
-
-                RotatedX = Xoffset + xOffset;
-                RotatedY = Yoffset + yOffset;
-                FlippedRotatedY = FlippedYoffset + yOffset ;
+                this.RotatedX = Xoffset + xOffset;
+                this.RotatedY = Yoffset + yOffset;
+                this.FlippedRotatedY = FlippedYoffset + yOffset ;
             }
         }
+
+        // ----------------------------------------------------------------------------------------
 
         private double AngleToRadians(double angle)
         {
             return (Math.PI / 180) * angle;
         }
+
+        private void CreateHole(double X, double Y, int toolnum, Units fileUnits)
+        {
+            this.ToolNum = toolnum;
+            this.FilePoint = new Point(Convert.ToInt32(X), Convert.ToInt32(Y));
+            this.HoleUnit = fileUnits;
+            if (HoleUnit == Units.METRIC)
+            {
+                // 10,000 th of  MM
+                this.ResolvedX = X / 10000;
+                this.ResolvedY = Y / 10000;
+            }
+            else
+            {
+                // 100,000 th of INCH
+                this.ResolvedX = X / 100000;
+                this.ResolvedY = Y / 100000;
+            }
+        }
+
+
 
     }
 }

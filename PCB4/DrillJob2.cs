@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 
-namespace PCB3
+namespace PCB4
 {
     class DrillJob2
     {
@@ -33,7 +33,7 @@ namespace PCB3
 
         public DrillJob2(string drillFileName)
         {
-            Pen[] pens = new Pen[] { Pens.Black, Pens.Blue, Pens.Red, Pens.Green, Pens.Orange, Pens.Yellow,  Pens.Violet, Pens.Brown };
+            Pen[] pens = new Pen[] { Pens.Black, Pens.Blue, Pens.Red, Pens.Green, Pens.Orange, Pens.Yellow,  Pens.Brown, Pens.BlueViolet, Pens.Chocolate, Pens.Cyan, Pens.DarkRed, Pens.DeepSkyBlue };
             DrillColours = new Dictionary<int, Pen>();
 
 
@@ -149,14 +149,14 @@ namespace PCB3
             {
                 //hle.ZeroPoint = new Point(hle.FilePoint.X - iMIN_X, hle.FilePoint.Y - iMIN_Y);
                 hle.FlippedFilePoint = new Point(hle.FilePoint.X, iMAX_Y - hle.FilePoint.Y);
-                if (hle.FlippedFilePoint.Y > iMAX_FY) iMAX_FY = hle.FilePoint.Y;
+                if (hle.FlippedFilePoint.Y > iMAX_FY) iMAX_FY = hle.FlippedFilePoint.Y;
                 if (hle.FlippedFilePoint.Y < iMIN_FY) iMIN_FY = hle.FlippedFilePoint.Y;
             }
 
-            double div = 10000.0; // metric 1/10,000
+            double div = 1000.0; // metric 1/10,000
             if (JobUnits == Units.IMPERIAL)
             {
-                div = 100000.0; // Imperial 1/100,000
+                div = 10000.0; // Imperial 1/100,000
             }
             dMIN_X = int.MaxValue;
             dMIN_Y = int.MaxValue;

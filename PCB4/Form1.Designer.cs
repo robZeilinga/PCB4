@@ -1,4 +1,4 @@
-﻿namespace PCB3
+﻿namespace PCB4
 {
     partial class Form1
     {
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pic_Box_Orig = new System.Windows.Forms.PictureBox();
             this.gb_DrillFile = new System.Windows.Forms.GroupBox();
@@ -134,6 +134,9 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.chk_IncludeHoleInfo = new System.Windows.Forms.CheckBox();
+            this.chk_LeaveZHeight = new System.Windows.Forms.CheckBox();
+            this.chk_IgnorePause = new System.Windows.Forms.CheckBox();
             this.cb_Drill = new System.Windows.Forms.CheckBox();
             this.txtDrillDepth = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
@@ -141,7 +144,7 @@
             this.label39 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_GenFile = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pic_Box_Res = new System.Windows.Forms.PictureBox();
@@ -162,13 +165,31 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label57 = new System.Windows.Forms.Label();
+            this.picBox_Simulate = new System.Windows.Forms.PictureBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.chkSimFlip = new System.Windows.Forms.CheckBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.txtSimHole0Y = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.txtSimHole0X = new System.Windows.Forms.TextBox();
+            this.txt_OverrideRotate = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.chk_DrawMovement = new System.Windows.Forms.CheckBox();
+            this.txtDrillSize = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.txtCNCHeight = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.txtCNCWidth = new System.Windows.Forms.TextBox();
+            this.btn_RunSimulate = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DrillNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumHoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Colour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label51 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Orig)).BeginInit();
             this.gb_DrillFile.SuspendLayout();
@@ -185,7 +206,10 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Res)).BeginInit();
             this.gb_Rotation.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Simulate)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -638,11 +662,13 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(562, 17);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Location = new System.Drawing.Point(586, 11);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(507, 695);
+            this.tabControl1.Size = new System.Drawing.Size(760, 695);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage2
@@ -656,7 +682,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(499, 669);
+            this.tabPage2.Size = new System.Drawing.Size(752, 669);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Camera";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -678,7 +704,7 @@
             this.picBox_Video.Location = new System.Drawing.Point(8, 183);
             this.picBox_Video.Margin = new System.Windows.Forms.Padding(2);
             this.picBox_Video.Name = "picBox_Video";
-            this.picBox_Video.Size = new System.Drawing.Size(480, 352);
+            this.picBox_Video.Size = new System.Drawing.Size(684, 460);
             this.picBox_Video.TabIndex = 1;
             this.picBox_Video.TabStop = false;
             // 
@@ -921,7 +947,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(499, 669);
+            this.tabPage3.Size = new System.Drawing.Size(752, 669);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Camera Offset";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1232,7 +1258,7 @@
             this.tabPage4.Controls.Add(this.groupBox6);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(499, 669);
+            this.tabPage4.Size = new System.Drawing.Size(752, 669);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Generate";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1247,6 +1273,9 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.chk_IncludeHoleInfo);
+            this.groupBox6.Controls.Add(this.chk_LeaveZHeight);
+            this.groupBox6.Controls.Add(this.chk_IgnorePause);
             this.groupBox6.Controls.Add(this.cb_Drill);
             this.groupBox6.Controls.Add(this.txtDrillDepth);
             this.groupBox6.Controls.Add(this.label48);
@@ -1254,13 +1283,43 @@
             this.groupBox6.Controls.Add(this.label39);
             this.groupBox6.Controls.Add(this.textBox3);
             this.groupBox6.Controls.Add(this.label38);
-            this.groupBox6.Controls.Add(this.button5);
+            this.groupBox6.Controls.Add(this.btn_GenFile);
             this.groupBox6.Location = new System.Drawing.Point(10, 9);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(478, 157);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Generate Options";
+            // 
+            // chk_IncludeHoleInfo
+            // 
+            this.chk_IncludeHoleInfo.AutoSize = true;
+            this.chk_IncludeHoleInfo.Location = new System.Drawing.Point(181, 72);
+            this.chk_IncludeHoleInfo.Name = "chk_IncludeHoleInfo";
+            this.chk_IncludeHoleInfo.Size = new System.Drawing.Size(145, 17);
+            this.chk_IncludeHoleInfo.TabIndex = 41;
+            this.chk_IncludeHoleInfo.Text = "Include Original Hole Info";
+            this.chk_IncludeHoleInfo.UseVisualStyleBackColor = true;
+            // 
+            // chk_LeaveZHeight
+            // 
+            this.chk_LeaveZHeight.AutoSize = true;
+            this.chk_LeaveZHeight.Location = new System.Drawing.Point(181, 49);
+            this.chk_LeaveZHeight.Name = "chk_LeaveZHeight";
+            this.chk_LeaveZHeight.Size = new System.Drawing.Size(147, 17);
+            this.chk_LeaveZHeight.TabIndex = 40;
+            this.chk_LeaveZHeight.Text = "Leave Z at Safe Z Height";
+            this.chk_LeaveZHeight.UseVisualStyleBackColor = true;
+            // 
+            // chk_IgnorePause
+            // 
+            this.chk_IgnorePause.AutoSize = true;
+            this.chk_IgnorePause.Location = new System.Drawing.Point(181, 21);
+            this.chk_IgnorePause.Name = "chk_IgnorePause";
+            this.chk_IgnorePause.Size = new System.Drawing.Size(89, 17);
+            this.chk_IgnorePause.TabIndex = 39;
+            this.chk_IgnorePause.Text = "Ignore Pause";
+            this.chk_IgnorePause.UseVisualStyleBackColor = true;
             // 
             // cb_Drill
             // 
@@ -1278,7 +1337,7 @@
             this.txtDrillDepth.Name = "txtDrillDepth";
             this.txtDrillDepth.Size = new System.Drawing.Size(31, 20);
             this.txtDrillDepth.TabIndex = 37;
-            this.txtDrillDepth.Text = "37";
+            this.txtDrillDepth.Text = "36.5";
             // 
             // label48
             // 
@@ -1295,7 +1354,7 @@
             this.txtSafeZHeight.Name = "txtSafeZHeight";
             this.txtSafeZHeight.Size = new System.Drawing.Size(31, 20);
             this.txtSafeZHeight.TabIndex = 35;
-            this.txtSafeZHeight.Text = "35";
+            this.txtSafeZHeight.Text = "36.5";
             // 
             // label39
             // 
@@ -1323,16 +1382,16 @@
             this.label38.TabIndex = 32;
             this.label38.Text = "Pause Time (sec) :";
             // 
-            // button5
+            // btn_GenFile
             // 
-            this.button5.Location = new System.Drawing.Point(405, 116);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(68, 32);
-            this.button5.TabIndex = 31;
-            this.button5.Text = "Gen File";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_GenFile.Location = new System.Drawing.Point(405, 116);
+            this.btn_GenFile.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_GenFile.Name = "btn_GenFile";
+            this.btn_GenFile.Size = new System.Drawing.Size(68, 32);
+            this.btn_GenFile.TabIndex = 31;
+            this.btn_GenFile.Text = "Gen File";
+            this.btn_GenFile.UseVisualStyleBackColor = true;
+            this.btn_GenFile.Click += new System.EventHandler(this.btn_GenFile_Click);
             // 
             // tabPage1
             // 
@@ -1342,7 +1401,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(499, 669);
+            this.tabPage1.Size = new System.Drawing.Size(752, 669);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Rotation";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1353,7 +1412,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox2.Location = new System.Drawing.Point(2, 165);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(495, 502);
+            this.groupBox2.Size = new System.Drawing.Size(748, 502);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Result";
@@ -1363,7 +1422,7 @@
             this.pic_Box_Res.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pic_Box_Res.Location = new System.Drawing.Point(3, 16);
             this.pic_Box_Res.Name = "pic_Box_Res";
-            this.pic_Box_Res.Size = new System.Drawing.Size(489, 483);
+            this.pic_Box_Res.Size = new System.Drawing.Size(742, 483);
             this.pic_Box_Res.TabIndex = 0;
             this.pic_Box_Res.TabStop = false;
             // 
@@ -1531,16 +1590,210 @@
             this.label13.TabIndex = 10;
             this.label13.Text = "X: ";
             // 
-            // groupBox7
+            // tabPage5
             // 
-            this.groupBox7.Controls.Add(this.dataGridView1);
-            this.groupBox7.Controls.Add(this.label51);
-            this.groupBox7.Location = new System.Drawing.Point(1079, 42);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(382, 381);
-            this.groupBox7.TabIndex = 5;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Drill File Info";
+            this.tabPage5.Controls.Add(this.label57);
+            this.tabPage5.Controls.Add(this.picBox_Simulate);
+            this.tabPage5.Controls.Add(this.groupBox8);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(752, 669);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Simulate";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(20, 151);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(59, 13);
+            this.label57.TabIndex = 43;
+            this.label57.Text = "Default 0,0";
+            // 
+            // picBox_Simulate
+            // 
+            this.picBox_Simulate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picBox_Simulate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picBox_Simulate.Location = new System.Drawing.Point(23, 173);
+            this.picBox_Simulate.Name = "picBox_Simulate";
+            this.picBox_Simulate.Size = new System.Drawing.Size(652, 475);
+            this.picBox_Simulate.TabIndex = 2;
+            this.picBox_Simulate.TabStop = false;
+            this.picBox_Simulate.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picBox_Simulate_MouseClick);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.chkSimFlip);
+            this.groupBox8.Controls.Add(this.label60);
+            this.groupBox8.Controls.Add(this.txtSimHole0Y);
+            this.groupBox8.Controls.Add(this.label59);
+            this.groupBox8.Controls.Add(this.txtSimHole0X);
+            this.groupBox8.Controls.Add(this.txt_OverrideRotate);
+            this.groupBox8.Controls.Add(this.label58);
+            this.groupBox8.Controls.Add(this.label56);
+            this.groupBox8.Controls.Add(this.chk_DrawMovement);
+            this.groupBox8.Controls.Add(this.txtDrillSize);
+            this.groupBox8.Controls.Add(this.label54);
+            this.groupBox8.Controls.Add(this.txtCNCHeight);
+            this.groupBox8.Controls.Add(this.label55);
+            this.groupBox8.Controls.Add(this.txtCNCWidth);
+            this.groupBox8.Controls.Add(this.btn_RunSimulate);
+            this.groupBox8.Location = new System.Drawing.Point(12, 10);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(411, 118);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Simulate Options";
+            // 
+            // chkSimFlip
+            // 
+            this.chkSimFlip.AutoSize = true;
+            this.chkSimFlip.Checked = true;
+            this.chkSimFlip.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSimFlip.Location = new System.Drawing.Point(181, 44);
+            this.chkSimFlip.Name = "chkSimFlip";
+            this.chkSimFlip.Size = new System.Drawing.Size(42, 17);
+            this.chkSimFlip.TabIndex = 49;
+            this.chkSimFlip.Text = "Flip";
+            this.chkSimFlip.UseVisualStyleBackColor = true;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(291, 44);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(43, 13);
+            this.label60.TabIndex = 48;
+            this.label60.Text = "hle 0 Y:";
+            // 
+            // txtSimHole0Y
+            // 
+            this.txtSimHole0Y.Enabled = false;
+            this.txtSimHole0Y.Location = new System.Drawing.Point(340, 41);
+            this.txtSimHole0Y.Name = "txtSimHole0Y";
+            this.txtSimHole0Y.Size = new System.Drawing.Size(57, 20);
+            this.txtSimHole0Y.TabIndex = 47;
+            this.txtSimHole0Y.Text = "10";
+            this.txtSimHole0Y.TextChanged += new System.EventHandler(this.txtSimHole0Y_TextChanged);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(291, 20);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(43, 13);
+            this.label59.TabIndex = 46;
+            this.label59.Text = "hle 0 X:";
+            // 
+            // txtSimHole0X
+            // 
+            this.txtSimHole0X.Enabled = false;
+            this.txtSimHole0X.Location = new System.Drawing.Point(340, 17);
+            this.txtSimHole0X.Name = "txtSimHole0X";
+            this.txtSimHole0X.Size = new System.Drawing.Size(57, 20);
+            this.txtSimHole0X.TabIndex = 45;
+            this.txtSimHole0X.Text = "10";
+            // 
+            // txt_OverrideRotate
+            // 
+            this.txt_OverrideRotate.Location = new System.Drawing.Point(121, 93);
+            this.txt_OverrideRotate.Name = "txt_OverrideRotate";
+            this.txt_OverrideRotate.Size = new System.Drawing.Size(31, 20);
+            this.txt_OverrideRotate.TabIndex = 44;
+            this.txt_OverrideRotate.Text = "0.0";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(22, 96);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(90, 13);
+            this.label58.TabIndex = 43;
+            this.label58.Text = "Override Rotation";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(46, 21);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(66, 13);
+            this.label56.TabIndex = 42;
+            this.label56.Text = "CNC Width :";
+            // 
+            // chk_DrawMovement
+            // 
+            this.chk_DrawMovement.AutoSize = true;
+            this.chk_DrawMovement.Location = new System.Drawing.Point(181, 21);
+            this.chk_DrawMovement.Name = "chk_DrawMovement";
+            this.chk_DrawMovement.Size = new System.Drawing.Size(104, 17);
+            this.chk_DrawMovement.TabIndex = 39;
+            this.chk_DrawMovement.Text = "Draw Movement";
+            this.chk_DrawMovement.UseVisualStyleBackColor = true;
+            this.chk_DrawMovement.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // txtDrillSize
+            // 
+            this.txtDrillSize.Location = new System.Drawing.Point(121, 68);
+            this.txtDrillSize.Name = "txtDrillSize";
+            this.txtDrillSize.Size = new System.Drawing.Size(31, 20);
+            this.txtDrillSize.TabIndex = 37;
+            this.txtDrillSize.Text = "1.0";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(43, 71);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(69, 13);
+            this.label54.TabIndex = 36;
+            this.label54.Text = "Drill Diameter";
+            // 
+            // txtCNCHeight
+            // 
+            this.txtCNCHeight.Location = new System.Drawing.Point(121, 41);
+            this.txtCNCHeight.Name = "txtCNCHeight";
+            this.txtCNCHeight.Size = new System.Drawing.Size(31, 20);
+            this.txtCNCHeight.TabIndex = 35;
+            this.txtCNCHeight.Text = "200";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(43, 44);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(69, 13);
+            this.label55.TabIndex = 34;
+            this.label55.Text = "CNC Height :";
+            // 
+            // txtCNCWidth
+            // 
+            this.txtCNCWidth.Location = new System.Drawing.Point(121, 18);
+            this.txtCNCWidth.Name = "txtCNCWidth";
+            this.txtCNCWidth.Size = new System.Drawing.Size(31, 20);
+            this.txtCNCWidth.TabIndex = 33;
+            this.txtCNCWidth.Text = "200";
+            // 
+            // btn_RunSimulate
+            // 
+            this.btn_RunSimulate.Location = new System.Drawing.Point(338, 77);
+            this.btn_RunSimulate.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_RunSimulate.Name = "btn_RunSimulate";
+            this.btn_RunSimulate.Size = new System.Drawing.Size(68, 32);
+            this.btn_RunSimulate.TabIndex = 31;
+            this.btn_RunSimulate.Text = "Simulate";
+            this.btn_RunSimulate.UseVisualStyleBackColor = true;
+            this.btn_RunSimulate.Click += new System.EventHandler(this.btn_RunSimulate_Click);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.dataGridView1);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(752, 669);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Drills";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -1548,31 +1801,31 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillNum,
             this.Size,
             this.NumHoles,
             this.Colour});
-            this.dataGridView1.Location = new System.Drawing.Point(20, 44);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 83);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Size = new System.Drawing.Size(356, 81);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Size = new System.Drawing.Size(311, 81);
             this.dataGridView1.TabIndex = 2;
             // 
             // DrillNum
@@ -1598,21 +1851,11 @@
             this.Colour.HeaderText = "Colour";
             this.Colour.Name = "Colour";
             // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(8, 24);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(29, 13);
-            this.label51.TabIndex = 1;
-            this.label51.Text = "Drills";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1472, 720);
-            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.gb_DrillFile);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
@@ -1644,8 +1887,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Res)).EndInit();
             this.gb_Rotation.ResumeLayout(false);
             this.gb_Rotation.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Simulate)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1771,7 +2018,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_GenFile;
         private System.Windows.Forms.TextBox txtDrillDepth;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.TextBox txtSafeZHeight;
@@ -1781,16 +2028,37 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TextBox txtCameraOffsetY;
         private System.Windows.Forms.TextBox txtCameraOffsetX;
-        private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DrillNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Size;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumHoles;
         private System.Windows.Forms.DataGridViewTextBoxColumn Colour;
-        private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label lblFinalScale;
         private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.CheckBox chk_IncludeHoleInfo;
+        private System.Windows.Forms.CheckBox chk_LeaveZHeight;
+        private System.Windows.Forms.CheckBox chk_IgnorePause;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.CheckBox chk_DrawMovement;
+        private System.Windows.Forms.TextBox txtDrillSize;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.TextBox txtCNCHeight;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox txtCNCWidth;
+        private System.Windows.Forms.Button btn_RunSimulate;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.PictureBox picBox_Simulate;
+        private System.Windows.Forms.TextBox txt_OverrideRotate;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.TextBox txtSimHole0Y;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox txtSimHole0X;
+        private System.Windows.Forms.CheckBox chkSimFlip;
+        private System.Windows.Forms.TabPage tabPage6;
     }
 }
 
