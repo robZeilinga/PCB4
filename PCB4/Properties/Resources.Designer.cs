@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PCB4.Properties
-{
-
-
+namespace PCB_DR.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -19,52 +19,85 @@ namespace PCB4.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    public class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PCB4.Properties.Resources", typeof(Resources).Assembly);
+        public static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PCB_DR.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        public static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Alarm Code in v1.1+&quot;,&quot; Alarm Message in v1.0-&quot;,&quot; Alarm Description&quot;
+        ///&quot;1&quot;,&quot;Hard limit&quot;,&quot;Hard limit has been triggered. Machine position is likely lost due to sudden halt. Re-homing is highly recommended.&quot;
+        ///&quot;2&quot;,&quot;Soft limit&quot;,&quot;Soft limit alarm. G-code motion target exceeds machine travel. Machine position retained. Alarm may be safely unlocked.&quot;
+        ///&quot;3&quot;,&quot;Abort during cycle&quot;,&quot;Reset while in motion. Machine position is likely lost due to sudden halt. Re-homing is highly recommended.&quot;
+        ///&quot;4&quot;,&quot;Probe fail&quot;,&quot;Probe fail.  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string alarm_codes_en_US {
+            get {
+                return ResourceManager.GetString("alarm_codes_en_US", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Error Code in v1.1+&quot;,&quot;Error Message in v1.0-&quot;,&quot;Error Description&quot;
+        ///&quot;1&quot;,&quot;Expected command letter&quot;,&quot;G-code words consist of a letter and a value. Letter was not found.&quot;
+        ///&quot;2&quot;,&quot;Bad number format&quot;,&quot;Missing the expected G-code word value or numeric value format is not valid.&quot;
+        ///&quot;3&quot;,&quot;Invalid statement&quot;,&quot;Grbl &apos;$&apos; system command was not recognized or supported.&quot;
+        ///&quot;4&quot;,&quot;Value &lt; 0&quot;,&quot;Negative value received for an expected positive value.&quot;
+        ///&quot;5&quot;,&quot;Setting disabled&quot;,&quot;Homing cycle failure. Homing is not enabled via settings [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string error_codes_en_US {
+            get {
+                return ResourceManager.GetString("error_codes_en_US", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;$-Code&quot;,&quot; Setting&quot;,&quot; Units&quot;,&quot; Setting Description&quot;
+        ///&quot;0&quot;,&quot;Step pulse time&quot;,&quot;microseconds&quot;,&quot;Sets time length per step. Minimum 3usec.&quot;
+        ///&quot;1&quot;,&quot;Step idle delay&quot;,&quot;milliseconds&quot;,&quot;Sets a short hold delay when stopping to let dynamics settle before disabling steppers. Value 255 keeps motors enabled with no delay.&quot;
+        ///&quot;2&quot;,&quot;Step pulse invert&quot;,&quot;mask&quot;,&quot;Inverts the step signal. Set axis bit to invert (00000ZYX).&quot;
+        ///&quot;3&quot;,&quot;Step direction invert&quot;,&quot;mask&quot;,&quot;Inverts the direction signal. Set axis bit to invert (00000ZYX).&quot;
+        ///&quot;4&quot;,&quot;I [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string setting_codes_en_US {
+            get {
+                return ResourceManager.GetString("setting_codes_en_US", resourceCulture);
             }
         }
     }

@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 
-namespace PCB4
+namespace PCB_DR
 {
     class DrillJob2
     {
@@ -167,13 +167,13 @@ namespace PCB4
             foreach (Hole hle in Holes)
             {
                 hle.ZeroPoint = new Point(hle.FlippedFilePoint.X - iMIN_X, hle.FlippedFilePoint.Y - iMIN_FY);
-                hle.ResolvedX = hle.ZeroPoint.X / div;
-                hle.ResolvedY = hle.ZeroPoint.Y / div;
-                if (hle.ResolvedX > dMAX_X) dMAX_X = hle.ResolvedX;
-                if (hle.ResolvedX < dMIN_X) dMIN_X = hle.ResolvedX;
+                hle.Xinmm = hle.ZeroPoint.X / div;
+                hle.Yinmm = hle.ZeroPoint.Y / div;
+                if (hle.Xinmm > dMAX_X) dMAX_X = hle.Xinmm;
+                if (hle.Xinmm < dMIN_X) dMIN_X = hle.Xinmm;
 
-                if (hle.ResolvedY > dMAX_Y) dMAX_Y = hle.ResolvedY;
-                if (hle.ResolvedY < dMIN_Y) dMIN_Y = hle.ResolvedY;
+                if (hle.Yinmm > dMAX_Y) dMAX_Y = hle.Yinmm;
+                if (hle.Yinmm < dMIN_Y) dMIN_Y = hle.Yinmm;
 
             }
         }

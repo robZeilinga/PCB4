@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCB", "PCB4\PCB4.csproj", "{81652F24-7227-4949-99BE-AE59648A4DB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCB_DR", "PCB4\PCB_DR.csproj", "{81652F24-7227-4949-99BE-AE59648A4DB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{142C6452-0443-4E52-AEF5-818E3F9BB8C2}"
 EndProject

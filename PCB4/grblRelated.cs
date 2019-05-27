@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace PCB4
+namespace PCB_DR
 {
     public static class grbl
     {       // need to have global access to this data?
@@ -60,9 +60,10 @@ namespace PCB4
 
         public static void init()   // initialize lists
         {
-            //setMessageString(ref messageAlarmCodes, Properties.Resources.alarm_codes_en_US);
-            //setMessageString(ref messageErrorCodes, Properties.Resources.error_codes_en_US);
-            //setMessageString(ref messageSettingCodes, Properties.Resources.setting_codes_en_US);
+            
+            setMessageString(ref messageAlarmCodes, Properties.Resources.alarm_codes_en_US);
+            setMessageString(ref messageErrorCodes, Properties.Resources.error_codes_en_US);
+            setMessageString(ref messageSettingCodes, Properties.Resources.setting_codes_en_US,true);
             /*            string fourthAxis = "A";    // Properties.Settings.Default.ctrl4thName;
                         messageSettingCodes.Add("103", fourthAxis + " -steps/deg");
                         messageSettingCodes.Add("113", fourthAxis + " -axis maximum rate, deg/min");
@@ -124,13 +125,14 @@ namespace PCB4
                 return "no data";
         }
 
-        private static void setMessageString(ref Dictionary<string, string> myDict, string resource)
+        private static void setMessageString(ref Dictionary<string, string> myDict, string resource, bool settings = false)
         {
             string[] tmp = resource.Split('\n');
             foreach (string s in tmp)
             {
                 string[] col = s.Split(',');
                 string message = col[col.Length - 1].Trim('"');
+                if (settings) message = col[1].Trim('"');
                 myDict.Add(col[0].Trim('"'), message);
             }
         }

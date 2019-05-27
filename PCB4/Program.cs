@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PCB4
+namespace PCB_DR
 {
     static class Program
     {

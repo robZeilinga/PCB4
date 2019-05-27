@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Text;
 
-namespace PCB4
+namespace PCB_DR
 {/*  GRBL-Plotter. Another GCode sender for GRBL.
     This file is part of the GRBL-Plotter application.
    

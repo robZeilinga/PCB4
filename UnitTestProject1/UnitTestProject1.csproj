@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PCB4\PCB4.csproj">
+    <ProjectReference Include="..\PCB4\PCB_DR.csproj">
       <Project>{81652f24-7227-4949-99be-ae59648a4db5}</Project>
-      <Name>PCB3</Name>
+      <Name>PCB_DR</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

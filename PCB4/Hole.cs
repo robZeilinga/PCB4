@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace PCB4
+namespace PCB_DR
 {
     public class Hole
     {
@@ -43,12 +43,12 @@ namespace PCB4
                 if (HoleUnit == Units.METRIC)
                 {
                     // 10,000 th of  MM
-                    FlippedResolvedY = value.Y / 10000;
+                    FlippedYinmm = value.Y / 10000;
                 }
                 else
                 {
                     // 100,000 th of INCH
-                    FlippedResolvedY = value.Y / 100000;
+                    FlippedYinmm = value.Y / 100000;
                 }
             }
         }
@@ -57,15 +57,15 @@ namespace PCB4
         /// resolved locations are those that have been converted back to base units from File units 10 000 mm or 100 000 inch
         /// </summary>
         
-        public double ResolvedX { get; set; }
+        public double Xinmm { get; set; }
         /// <summary>
         /// resolved locations are those that have been converted back to base units from File units 10 000 mm or 100 000 inch
         /// </summary>
-        public double ResolvedY { get; set; }
+        public double Yinmm { get; set; }
         /// <summary>
         /// resolved locations are those that have been converted back to base units from File units 10 000 mm or 100 000 inch
         /// </summary>
-        public double FlippedResolvedY { get; set; }
+        public double FlippedYinmm { get; set; }
 
         /// <summary>
         /// placeholder for scale (should always be 1 )
@@ -125,18 +125,19 @@ namespace PCB4
 
             this.rotationAngle = rotAngle;
 
-            if (ResolvedX == HoleZero.ResolvedX && ResolvedY == HoleZero.ResolvedY)
+            if (Xinmm == HoleZero.Xinmm && Yinmm == HoleZero.Yinmm)
             {
                 // hole zero 
-                this.RotatedX = ResolvedX + xOffset;
-                this.RotatedY = ResolvedY + yOffset;
-                this.FlippedRotatedY = FlippedResolvedY + yOffset;
+                this.RotatedX = Xinmm + xOffset;
+                this.RotatedY = Yinmm + yOffset;
+                this.FlippedRotatedY = FlippedYinmm + yOffset;
             }
             else
             {
-                double xDiff = ResolvedX - HoleZero.ResolvedX;
-                double yDiff = ResolvedY - HoleZero.ResolvedY;
-                double flipped_yDiff = FlippedResolvedY - HoleZero.FlippedResolvedY;
+                
+                double xDiff = Xinmm - HoleZero.Xinmm;
+                double yDiff = Yinmm - HoleZero.Yinmm;
+                double flipped_yDiff = FlippedYinmm - HoleZero.FlippedYinmm;
 
                 double original_hole_angle = Math.Atan2(yDiff, xDiff) * 180.0 / Math.PI;
                 double flipped_angle = Math.Atan2(flipped_yDiff, xDiff) * 180.0 / Math.PI;
@@ -150,9 +151,9 @@ namespace PCB4
                 double finalRotationAngleInRadians = AngleToRadians(original_hole_angle + this.rotationAngle);
                 
                 // Calculate offset of this hole === final position 
-                double Xoffset = HoleZero.ResolvedX + dist1 * Math.Cos(finalRotationAngleInRadians);
-                double Yoffset = HoleZero.ResolvedY + dist1 * Math.Sin(finalRotationAngleInRadians);
-                double FlippedYoffset = HoleZero.FlippedResolvedY + flipped_dist1 * Math.Sin(finalRotationAngleInRadians);
+                double Xoffset = HoleZero.Xinmm + dist1 * Math.Cos(finalRotationAngleInRadians);
+                double Yoffset = HoleZero.Yinmm + dist1 * Math.Sin(finalRotationAngleInRadians);
+                double FlippedYoffset = HoleZero.FlippedYinmm + flipped_dist1 * Math.Sin(finalRotationAngleInRadians);
 
                 this.RotatedX = Xoffset + xOffset;
                 this.RotatedY = Yoffset + yOffset;
@@ -175,14 +176,14 @@ namespace PCB4
             if (HoleUnit == Units.METRIC)
             {
                 // 10,000 th of  MM
-                this.ResolvedX = X / 10000;
-                this.ResolvedY = Y / 10000;
+                this.Xinmm = X / 10000;
+                this.Yinmm = Y / 10000;
             }
             else
             {
                 // 100,000 th of INCH
-                this.ResolvedX = X / 100000;
-                this.ResolvedY = Y / 100000;
+                this.Xinmm = X / 100000;
+                this.Yinmm = Y / 100000;
             }
         }
 

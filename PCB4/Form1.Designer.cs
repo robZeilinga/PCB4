@@ -1,4 +1,4 @@
-﻿namespace PCB4
+﻿namespace PCB_DR
 {
     partial class Form1
     {
@@ -44,64 +44,93 @@
             this.label41 = new System.Windows.Forms.Label();
             this.btn_Org_SetHole2 = new System.Windows.Forms.Button();
             this.cb_Flip = new System.Windows.Forms.CheckBox();
-            this.lblHoleFound = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lbl_Click_Y = new System.Windows.Forms.Label();
-            this.lbl_Click_X = new System.Windows.Forms.Label();
+            this.lbl_Hole0_Y = new System.Windows.Forms.Label();
+            this.lbl_Hole0_X = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cb_Grid = new System.Windows.Forms.CheckBox();
             this.btn_Drill_File_Open = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.lblFinalScale = new System.Windows.Forms.Label();
-            this.lbl_Scale_Y = new System.Windows.Forms.Label();
-            this.lbl_Scale_X = new System.Windows.Forms.Label();
-            this.lbl_PicY = new System.Windows.Forms.Label();
-            this.lbl_PicX = new System.Windows.Forms.Label();
-            this.lbl_Extents_dY = new System.Windows.Forms.Label();
-            this.lbl_Extents_dX = new System.Windows.Forms.Label();
-            this.lbl_Extents_Y_Min = new System.Windows.Forms.Label();
-            this.lbl_Extents_X_Min = new System.Windows.Forms.Label();
-            this.lbl_Extents_X_Max = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl_Extents_Y_Max = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbl_NumHoles = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.btn_Org_SetHole1 = new System.Windows.Forms.Button();
             this.lbl_DrillFileName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btn_camera_start = new System.Windows.Forms.Button();
-            this.picBox_Video = new System.Windows.Forms.PictureBox();
-            this.cmb_Camera = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lbl_Result_Angle = new System.Windows.Forms.Label();
-            this.lbl_Result_Scale = new System.Windows.Forms.Label();
+            this.lbl_PCB_Angle = new System.Windows.Forms.Label();
+            this.lbl_PCB_Scale = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.lblCamAngle = new System.Windows.Forms.Label();
-            this.lblCamDist = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.txt_Hole_2_Y = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.txt_Hole_2_X = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txt_Hole_Zero_Y = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.txt_Hole_Zero_X = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.timerSerial = new System.Windows.Forms.Timer(this.components);
+            this.serialPort = new System.IO.Ports.SerialPort(this.components);
+            this.btnGrabCamHole0 = new System.Windows.Forms.Button();
+            this.btnGrabCamHole2 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblPCBRotationAngle = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblPCBDist = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblPCBHole2_Y = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.lblPCBHole2_X = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblPCBHole0_Y = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblPCBHole0_X = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.cBCommand = new System.Windows.Forms.ComboBox();
+            this.btnGRBLReset = new System.Windows.Forms.Button();
+            this.btnGRBLCommand4 = new System.Windows.Forms.Button();
+            this.btnGRBLCommand3 = new System.Windows.Forms.Button();
+            this.btnGRBLCommand2 = new System.Windows.Forms.Button();
+            this.btnGRBLCommand1 = new System.Windows.Forms.Button();
+            this.btnGRBLCommand0 = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnCheckGRBLResult = new System.Windows.Forms.Button();
+            this.btnCheckGRBL = new System.Windows.Forms.Button();
+            this.cbStatus = new System.Windows.Forms.CheckBox();
+            this.lblSrA = new System.Windows.Forms.Label();
+            this.lblSrLn = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.lblSrState = new System.Windows.Forms.Label();
+            this.lblSrOv = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.lblSrPn = new System.Windows.Forms.Label();
+            this.lblSrPos = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.lblSrFS = new System.Windows.Forms.Label();
+            this.lblSrBf = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.rtbLog = new System.Windows.Forms.RichTextBox();
+            this.cbPort = new System.Windows.Forms.ComboBox();
+            this.cbBaud = new System.Windows.Forms.ComboBox();
+            this.btnScanPort = new System.Windows.Forms.Button();
+            this.btn_OpenPort = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DrillNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumHoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Colour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnDrill = new System.Windows.Forms.Button();
+            this.chk_IncludeHoleInfo = new System.Windows.Forms.CheckBox();
+            this.chk_LeaveZHeight = new System.Windows.Forms.CheckBox();
+            this.chk_IgnorePause = new System.Windows.Forms.CheckBox();
+            this.cb_Drill = new System.Windows.Forms.CheckBox();
+            this.txtDrillDepth = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.txtSafeZHeight = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.btn_GenFile = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label49 = new System.Windows.Forms.Label();
@@ -131,92 +160,44 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.chk_IncludeHoleInfo = new System.Windows.Forms.CheckBox();
-            this.chk_LeaveZHeight = new System.Windows.Forms.CheckBox();
-            this.chk_IgnorePause = new System.Windows.Forms.CheckBox();
-            this.cb_Drill = new System.Windows.Forms.CheckBox();
-            this.txtDrillDepth = new System.Windows.Forms.TextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.txtSafeZHeight = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.btn_GenFile = new System.Windows.Forms.Button();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pic_Box_Res = new System.Windows.Forms.PictureBox();
-            this.gb_Rotation = new System.Windows.Forms.GroupBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.txtScale = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txt_Offset_Y = new System.Windows.Forms.TextBox();
-            this.txt_Offset_X = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtFeed = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtScanHeight = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtAngle = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label57 = new System.Windows.Forms.Label();
-            this.picBox_Simulate = new System.Windows.Forms.PictureBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.chkSimFlip = new System.Windows.Forms.CheckBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.txtSimHole0Y = new System.Windows.Forms.TextBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.txtSimHole0X = new System.Windows.Forms.TextBox();
-            this.txt_OverrideRotate = new System.Windows.Forms.TextBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.chk_DrawMovement = new System.Windows.Forms.CheckBox();
-            this.txtDrillSize = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.txtCNCHeight = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.txtCNCWidth = new System.Windows.Forms.TextBox();
-            this.btn_RunSimulate = new System.Windows.Forms.Button();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DrillNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumHoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Colour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnStreamCode = new System.Windows.Forms.Button();
+            this.btn_camera_start = new System.Windows.Forms.Button();
+            this.picBox_Video = new System.Windows.Forms.PictureBox();
+            this.chk_Jog = new System.Windows.Forms.CheckBox();
+            this.cmb_Camera = new System.Windows.Forms.ComboBox();
+            this.lblMachinePosition = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Orig)).BeginInit();
             this.gb_DrillFile.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Video)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Res)).BeginInit();
-            this.gb_Rotation.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Simulate)).BeginInit();
-            this.groupBox8.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Video)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.pic_Box_Orig);
-            this.groupBox1.Location = new System.Drawing.Point(11, 206);
+            this.groupBox1.Location = new System.Drawing.Point(12, 139);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(536, 505);
             this.groupBox1.TabIndex = 0;
@@ -245,21 +226,17 @@
             this.gb_DrillFile.Controls.Add(this.label41);
             this.gb_DrillFile.Controls.Add(this.btn_Org_SetHole2);
             this.gb_DrillFile.Controls.Add(this.cb_Flip);
-            this.gb_DrillFile.Controls.Add(this.lblHoleFound);
-            this.gb_DrillFile.Controls.Add(this.label9);
-            this.gb_DrillFile.Controls.Add(this.lbl_Click_Y);
-            this.gb_DrillFile.Controls.Add(this.lbl_Click_X);
+            this.gb_DrillFile.Controls.Add(this.lbl_Hole0_Y);
+            this.gb_DrillFile.Controls.Add(this.lbl_Hole0_X);
             this.gb_DrillFile.Controls.Add(this.label8);
             this.gb_DrillFile.Controls.Add(this.label7);
-            this.gb_DrillFile.Controls.Add(this.cb_Grid);
             this.gb_DrillFile.Controls.Add(this.btn_Drill_File_Open);
-            this.gb_DrillFile.Controls.Add(this.groupBox3);
             this.gb_DrillFile.Controls.Add(this.btn_Org_SetHole1);
             this.gb_DrillFile.Controls.Add(this.lbl_DrillFileName);
             this.gb_DrillFile.Controls.Add(this.label1);
             this.gb_DrillFile.Location = new System.Drawing.Point(11, 10);
             this.gb_DrillFile.Name = "gb_DrillFile";
-            this.gb_DrillFile.Size = new System.Drawing.Size(535, 196);
+            this.gb_DrillFile.Size = new System.Drawing.Size(281, 123);
             this.gb_DrillFile.TabIndex = 2;
             this.gb_DrillFile.TabStop = false;
             this.gb_DrillFile.Text = "Drill File";
@@ -267,7 +244,7 @@
             // lbl_Angle
             // 
             this.lbl_Angle.AutoSize = true;
-            this.lbl_Angle.Location = new System.Drawing.Point(272, 144);
+            this.lbl_Angle.Location = new System.Drawing.Point(233, 74);
             this.lbl_Angle.Name = "lbl_Angle";
             this.lbl_Angle.Size = new System.Drawing.Size(20, 13);
             this.lbl_Angle.TabIndex = 21;
@@ -276,7 +253,7 @@
             // lbl_Dist
             // 
             this.lbl_Dist.AutoSize = true;
-            this.lbl_Dist.Location = new System.Drawing.Point(272, 125);
+            this.lbl_Dist.Location = new System.Drawing.Point(233, 55);
             this.lbl_Dist.Name = "lbl_Dist";
             this.lbl_Dist.Size = new System.Drawing.Size(20, 13);
             this.lbl_Dist.TabIndex = 20;
@@ -285,7 +262,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(237, 145);
+            this.label44.Location = new System.Drawing.Point(198, 75);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(37, 13);
             this.label44.TabIndex = 19;
@@ -294,7 +271,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(246, 125);
+            this.label45.Location = new System.Drawing.Point(207, 55);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(28, 13);
             this.label45.TabIndex = 18;
@@ -303,7 +280,7 @@
             // lbl_Hole2_Y
             // 
             this.lbl_Hole2_Y.AutoSize = true;
-            this.lbl_Hole2_Y.Location = new System.Drawing.Point(160, 144);
+            this.lbl_Hole2_Y.Location = new System.Drawing.Point(148, 99);
             this.lbl_Hole2_Y.Name = "lbl_Hole2_Y";
             this.lbl_Hole2_Y.Size = new System.Drawing.Size(20, 13);
             this.lbl_Hole2_Y.TabIndex = 17;
@@ -312,7 +289,7 @@
             // lbl_Hole2_X
             // 
             this.lbl_Hole2_X.AutoSize = true;
-            this.lbl_Hole2_X.Location = new System.Drawing.Point(160, 125);
+            this.lbl_Hole2_X.Location = new System.Drawing.Point(148, 80);
             this.lbl_Hole2_X.Name = "lbl_Hole2_X";
             this.lbl_Hole2_X.Size = new System.Drawing.Size(20, 13);
             this.lbl_Hole2_X.TabIndex = 16;
@@ -321,7 +298,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(134, 144);
+            this.label40.Location = new System.Drawing.Point(122, 99);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(20, 13);
             this.label40.TabIndex = 15;
@@ -330,7 +307,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(134, 125);
+            this.label41.Location = new System.Drawing.Point(122, 80);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(20, 13);
             this.label41.TabIndex = 14;
@@ -338,7 +315,7 @@
             // 
             // btn_Org_SetHole2
             // 
-            this.btn_Org_SetHole2.Location = new System.Drawing.Point(137, 95);
+            this.btn_Org_SetHole2.Location = new System.Drawing.Point(117, 50);
             this.btn_Org_SetHole2.Name = "btn_Org_SetHole2";
             this.btn_Org_SetHole2.Size = new System.Drawing.Size(75, 22);
             this.btn_Org_SetHole2.TabIndex = 13;
@@ -351,7 +328,7 @@
             this.cb_Flip.AutoSize = true;
             this.cb_Flip.Checked = true;
             this.cb_Flip.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_Flip.Location = new System.Drawing.Point(249, 76);
+            this.cb_Flip.Location = new System.Drawing.Point(201, 95);
             this.cb_Flip.Margin = new System.Windows.Forms.Padding(2);
             this.cb_Flip.Name = "cb_Flip";
             this.cb_Flip.Size = new System.Drawing.Size(45, 17);
@@ -359,45 +336,28 @@
             this.cb_Flip.Text = "Flip ";
             this.cb_Flip.UseVisualStyleBackColor = true;
             // 
-            // lblHoleFound
+            // lbl_Hole0_Y
             // 
-            this.lblHoleFound.AutoSize = true;
-            this.lblHoleFound.Location = new System.Drawing.Point(60, 79);
-            this.lblHoleFound.Name = "lblHoleFound";
-            this.lblHoleFound.Size = new System.Drawing.Size(0, 13);
-            this.lblHoleFound.TabIndex = 11;
+            this.lbl_Hole0_Y.AutoSize = true;
+            this.lbl_Hole0_Y.Location = new System.Drawing.Point(49, 99);
+            this.lbl_Hole0_Y.Name = "lbl_Hole0_Y";
+            this.lbl_Hole0_Y.Size = new System.Drawing.Size(20, 13);
+            this.lbl_Hole0_Y.TabIndex = 9;
+            this.lbl_Hole0_Y.Text = "Y: ";
             // 
-            // label9
+            // lbl_Hole0_X
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 79);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Hole : ";
-            // 
-            // lbl_Click_Y
-            // 
-            this.lbl_Click_Y.AutoSize = true;
-            this.lbl_Click_Y.Location = new System.Drawing.Point(42, 144);
-            this.lbl_Click_Y.Name = "lbl_Click_Y";
-            this.lbl_Click_Y.Size = new System.Drawing.Size(20, 13);
-            this.lbl_Click_Y.TabIndex = 9;
-            this.lbl_Click_Y.Text = "Y: ";
-            // 
-            // lbl_Click_X
-            // 
-            this.lbl_Click_X.AutoSize = true;
-            this.lbl_Click_X.Location = new System.Drawing.Point(42, 125);
-            this.lbl_Click_X.Name = "lbl_Click_X";
-            this.lbl_Click_X.Size = new System.Drawing.Size(20, 13);
-            this.lbl_Click_X.TabIndex = 8;
-            this.lbl_Click_X.Text = "X: ";
+            this.lbl_Hole0_X.AutoSize = true;
+            this.lbl_Hole0_X.Location = new System.Drawing.Point(49, 80);
+            this.lbl_Hole0_X.Name = "lbl_Hole0_X";
+            this.lbl_Hole0_X.Size = new System.Drawing.Size(20, 13);
+            this.lbl_Hole0_X.TabIndex = 8;
+            this.lbl_Hole0_X.Text = "X: ";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 144);
+            this.label8.Location = new System.Drawing.Point(23, 99);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(20, 13);
             this.label8.TabIndex = 7;
@@ -406,27 +366,15 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 125);
+            this.label7.Location = new System.Drawing.Point(23, 80);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(20, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "X: ";
             // 
-            // cb_Grid
-            // 
-            this.cb_Grid.AutoSize = true;
-            this.cb_Grid.Location = new System.Drawing.Point(249, 55);
-            this.cb_Grid.Margin = new System.Windows.Forms.Padding(2);
-            this.cb_Grid.Name = "cb_Grid";
-            this.cb_Grid.Size = new System.Drawing.Size(78, 17);
-            this.cb_Grid.TabIndex = 5;
-            this.cb_Grid.Text = "Visible Grid";
-            this.cb_Grid.UseVisualStyleBackColor = true;
-            this.cb_Grid.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // btn_Drill_File_Open
             // 
-            this.btn_Drill_File_Open.Location = new System.Drawing.Point(249, 17);
+            this.btn_Drill_File_Open.Location = new System.Drawing.Point(181, 17);
             this.btn_Drill_File_Open.Name = "btn_Drill_File_Open";
             this.btn_Drill_File_Open.Size = new System.Drawing.Size(30, 22);
             this.btn_Drill_File_Open.TabIndex = 4;
@@ -434,193 +382,9 @@
             this.btn_Drill_File_Open.UseVisualStyleBackColor = true;
             this.btn_Drill_File_Open.Click += new System.EventHandler(this.btn_Drill_File_Open_Click);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label52);
-            this.groupBox3.Controls.Add(this.lblFinalScale);
-            this.groupBox3.Controls.Add(this.lbl_Scale_Y);
-            this.groupBox3.Controls.Add(this.lbl_Scale_X);
-            this.groupBox3.Controls.Add(this.lbl_PicY);
-            this.groupBox3.Controls.Add(this.lbl_PicX);
-            this.groupBox3.Controls.Add(this.lbl_Extents_dY);
-            this.groupBox3.Controls.Add(this.lbl_Extents_dX);
-            this.groupBox3.Controls.Add(this.lbl_Extents_Y_Min);
-            this.groupBox3.Controls.Add(this.lbl_Extents_X_Min);
-            this.groupBox3.Controls.Add(this.lbl_Extents_X_Max);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.lbl_Extents_Y_Max);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.lbl_NumHoles);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(330, 17);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(194, 169);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Contents";
-            // 
-            // label52
-            // 
-            this.label52.Location = new System.Drawing.Point(5, 146);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(64, 13);
-            this.label52.TabIndex = 18;
-            this.label52.Text = "FinalScale";
-            // 
-            // lblFinalScale
-            // 
-            this.lblFinalScale.Location = new System.Drawing.Point(70, 146);
-            this.lblFinalScale.Name = "lblFinalScale";
-            this.lblFinalScale.Size = new System.Drawing.Size(55, 13);
-            this.lblFinalScale.TabIndex = 17;
-            this.lblFinalScale.Text = "FinalScale";
-            // 
-            // lbl_Scale_Y
-            // 
-            this.lbl_Scale_Y.Location = new System.Drawing.Point(133, 108);
-            this.lbl_Scale_Y.Name = "lbl_Scale_Y";
-            this.lbl_Scale_Y.Size = new System.Drawing.Size(55, 13);
-            this.lbl_Scale_Y.TabIndex = 16;
-            this.lbl_Scale_Y.Text = "Extents_X";
-            // 
-            // lbl_Scale_X
-            // 
-            this.lbl_Scale_X.Location = new System.Drawing.Point(133, 53);
-            this.lbl_Scale_X.Name = "lbl_Scale_X";
-            this.lbl_Scale_X.Size = new System.Drawing.Size(55, 13);
-            this.lbl_Scale_X.TabIndex = 15;
-            this.lbl_Scale_X.Text = "Extents_X";
-            // 
-            // lbl_PicY
-            // 
-            this.lbl_PicY.Location = new System.Drawing.Point(132, 92);
-            this.lbl_PicY.Name = "lbl_PicY";
-            this.lbl_PicY.Size = new System.Drawing.Size(55, 13);
-            this.lbl_PicY.TabIndex = 14;
-            this.lbl_PicY.Text = "Extents_X";
-            // 
-            // lbl_PicX
-            // 
-            this.lbl_PicX.Location = new System.Drawing.Point(133, 38);
-            this.lbl_PicX.Name = "lbl_PicX";
-            this.lbl_PicX.Size = new System.Drawing.Size(55, 13);
-            this.lbl_PicX.TabIndex = 13;
-            this.lbl_PicX.Text = "Extents_X";
-            // 
-            // lbl_Extents_dY
-            // 
-            this.lbl_Extents_dY.Location = new System.Drawing.Point(70, 128);
-            this.lbl_Extents_dY.Name = "lbl_Extents_dY";
-            this.lbl_Extents_dY.Size = new System.Drawing.Size(55, 13);
-            this.lbl_Extents_dY.TabIndex = 12;
-            this.lbl_Extents_dY.Text = "Extents_X";
-            this.lbl_Extents_dY.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lbl_Extents_dX
-            // 
-            this.lbl_Extents_dX.Location = new System.Drawing.Point(70, 71);
-            this.lbl_Extents_dX.Name = "lbl_Extents_dX";
-            this.lbl_Extents_dX.Size = new System.Drawing.Size(55, 13);
-            this.lbl_Extents_dX.TabIndex = 11;
-            this.lbl_Extents_dX.Text = "Extents_X";
-            this.lbl_Extents_dX.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lbl_Extents_Y_Min
-            // 
-            this.lbl_Extents_Y_Min.Location = new System.Drawing.Point(70, 108);
-            this.lbl_Extents_Y_Min.Name = "lbl_Extents_Y_Min";
-            this.lbl_Extents_Y_Min.Size = new System.Drawing.Size(55, 13);
-            this.lbl_Extents_Y_Min.TabIndex = 8;
-            this.lbl_Extents_Y_Min.Text = "Extents_Y";
-            this.lbl_Extents_Y_Min.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lbl_Extents_X_Min
-            // 
-            this.lbl_Extents_X_Min.Location = new System.Drawing.Point(70, 53);
-            this.lbl_Extents_X_Min.Name = "lbl_Extents_X_Min";
-            this.lbl_Extents_X_Min.Size = new System.Drawing.Size(55, 13);
-            this.lbl_Extents_X_Min.TabIndex = 7;
-            this.lbl_Extents_X_Min.Text = "Extents_X";
-            this.lbl_Extents_X_Min.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lbl_Extents_X_Min.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // lbl_Extents_X_Max
-            // 
-            this.lbl_Extents_X_Max.Location = new System.Drawing.Point(70, 38);
-            this.lbl_Extents_X_Max.Name = "lbl_Extents_X_Max";
-            this.lbl_Extents_X_Max.Size = new System.Drawing.Size(55, 13);
-            this.lbl_Extents_X_Max.TabIndex = 6;
-            this.lbl_Extents_X_Max.Text = "Extents_X";
-            this.lbl_Extents_X_Max.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 38);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Extents X :";
-            // 
-            // lbl_Extents_Y_Max
-            // 
-            this.lbl_Extents_Y_Max.Location = new System.Drawing.Point(70, 92);
-            this.lbl_Extents_Y_Max.Name = "lbl_Extents_Y_Max";
-            this.lbl_Extents_Y_Max.Size = new System.Drawing.Size(56, 13);
-            this.lbl_Extents_Y_Max.TabIndex = 4;
-            this.lbl_Extents_Y_Max.Text = "Extents_Y";
-            this.lbl_Extents_Y_Max.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Extents Y :";
-            // 
-            // lbl_NumHoles
-            // 
-            this.lbl_NumHoles.AutoSize = true;
-            this.lbl_NumHoles.Location = new System.Drawing.Point(52, 16);
-            this.lbl_NumHoles.Name = "lbl_NumHoles";
-            this.lbl_NumHoles.Size = new System.Drawing.Size(56, 13);
-            this.lbl_NumHoles.TabIndex = 2;
-            this.lbl_NumHoles.Text = "NumHoles";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Holes :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "---------------";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(70, 118);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "---------------";
-            // 
             // btn_Org_SetHole1
             // 
-            this.btn_Org_SetHole1.Location = new System.Drawing.Point(15, 95);
+            this.btn_Org_SetHole1.Location = new System.Drawing.Point(19, 48);
             this.btn_Org_SetHole1.Name = "btn_Org_SetHole1";
             this.btn_Org_SetHole1.Size = new System.Drawing.Size(75, 22);
             this.btn_Org_SetHole1.TabIndex = 2;
@@ -654,122 +418,29 @@
             // timer1
             // 
             this.timer1.Interval = 50;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // tabControl1
+            // lbl_PCB_Angle
             // 
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(586, 11);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(760, 695);
-            this.tabControl1.TabIndex = 4;
+            this.lbl_PCB_Angle.AutoSize = true;
+            this.lbl_PCB_Angle.Location = new System.Drawing.Point(199, 84);
+            this.lbl_PCB_Angle.Name = "lbl_PCB_Angle";
+            this.lbl_PCB_Angle.Size = new System.Drawing.Size(40, 13);
+            this.lbl_PCB_Angle.TabIndex = 29;
+            this.lbl_PCB_Angle.Text = "90.000";
             // 
-            // tabPage2
+            // lbl_PCB_Scale
             // 
-            this.tabPage2.Controls.Add(this.btn_camera_start);
-            this.tabPage2.Controls.Add(this.picBox_Video);
-            this.tabPage2.Controls.Add(this.cmb_Camera);
-            this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(752, 669);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Camera";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btn_camera_start
-            // 
-            this.btn_camera_start.Location = new System.Drawing.Point(224, 11);
-            this.btn_camera_start.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_camera_start.Name = "btn_camera_start";
-            this.btn_camera_start.Size = new System.Drawing.Size(51, 21);
-            this.btn_camera_start.TabIndex = 2;
-            this.btn_camera_start.Text = "Start";
-            this.btn_camera_start.UseVisualStyleBackColor = true;
-            this.btn_camera_start.Click += new System.EventHandler(this.btn_camera_start_Click);
-            // 
-            // picBox_Video
-            // 
-            this.picBox_Video.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picBox_Video.Location = new System.Drawing.Point(8, 183);
-            this.picBox_Video.Margin = new System.Windows.Forms.Padding(2);
-            this.picBox_Video.Name = "picBox_Video";
-            this.picBox_Video.Size = new System.Drawing.Size(684, 460);
-            this.picBox_Video.TabIndex = 1;
-            this.picBox_Video.TabStop = false;
-            // 
-            // cmb_Camera
-            // 
-            this.cmb_Camera.FormattingEnabled = true;
-            this.cmb_Camera.Location = new System.Drawing.Point(95, 11);
-            this.cmb_Camera.Margin = new System.Windows.Forms.Padding(2);
-            this.cmb_Camera.Name = "cmb_Camera";
-            this.cmb_Camera.Size = new System.Drawing.Size(126, 21);
-            this.cmb_Camera.TabIndex = 1;
-            this.cmb_Camera.SelectedIndexChanged += new System.EventHandler(this.cmb_Camera_SelectedIndexChanged);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.lbl_Result_Angle);
-            this.groupBox4.Controls.Add(this.lbl_Result_Scale);
-            this.groupBox4.Controls.Add(this.label46);
-            this.groupBox4.Controls.Add(this.label47);
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.lblCamAngle);
-            this.groupBox4.Controls.Add(this.lblCamDist);
-            this.groupBox4.Controls.Add(this.label42);
-            this.groupBox4.Controls.Add(this.label43);
-            this.groupBox4.Controls.Add(this.label35);
-            this.groupBox4.Controls.Add(this.label36);
-            this.groupBox4.Controls.Add(this.txt_Hole_2_Y);
-            this.groupBox4.Controls.Add(this.label37);
-            this.groupBox4.Controls.Add(this.txt_Hole_2_X);
-            this.groupBox4.Controls.Add(this.label34);
-            this.groupBox4.Controls.Add(this.label32);
-            this.groupBox4.Controls.Add(this.txt_Hole_Zero_Y);
-            this.groupBox4.Controls.Add(this.label33);
-            this.groupBox4.Controls.Add(this.txt_Hole_Zero_X);
-            this.groupBox4.Location = new System.Drawing.Point(8, 42);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(478, 127);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Alignment";
-            // 
-            // lbl_Result_Angle
-            // 
-            this.lbl_Result_Angle.AutoSize = true;
-            this.lbl_Result_Angle.Location = new System.Drawing.Point(347, 93);
-            this.lbl_Result_Angle.Name = "lbl_Result_Angle";
-            this.lbl_Result_Angle.Size = new System.Drawing.Size(20, 13);
-            this.lbl_Result_Angle.TabIndex = 29;
-            this.lbl_Result_Angle.Text = "Y: ";
-            // 
-            // lbl_Result_Scale
-            // 
-            this.lbl_Result_Scale.AutoSize = true;
-            this.lbl_Result_Scale.Location = new System.Drawing.Point(347, 74);
-            this.lbl_Result_Scale.Name = "lbl_Result_Scale";
-            this.lbl_Result_Scale.Size = new System.Drawing.Size(20, 13);
-            this.lbl_Result_Scale.TabIndex = 28;
-            this.lbl_Result_Scale.Text = "X: ";
+            this.lbl_PCB_Scale.AutoSize = true;
+            this.lbl_PCB_Scale.Location = new System.Drawing.Point(121, 84);
+            this.lbl_PCB_Scale.Name = "lbl_PCB_Scale";
+            this.lbl_PCB_Scale.Size = new System.Drawing.Size(34, 13);
+            this.lbl_PCB_Scale.TabIndex = 28;
+            this.lbl_PCB_Scale.Text = "9.000";
             // 
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(301, 93);
+            this.label46.Location = new System.Drawing.Point(163, 84);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(37, 13);
             this.label46.TabIndex = 27;
@@ -778,168 +449,791 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(301, 74);
+            this.label47.Location = new System.Drawing.Point(81, 84);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(40, 13);
             this.label47.TabIndex = 26;
             this.label47.Text = "Scale :";
             // 
-            // button4
+            // timerSerial
             // 
-            this.button4.Location = new System.Drawing.Point(245, 74);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(51, 32);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Align";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.timerSerial.Enabled = true;
+            this.timerSerial.Interval = 200;
+            this.timerSerial.Tick += new System.EventHandler(this.timerSerial_Tick);
             // 
-            // lblCamAngle
+            // serialPort
             // 
-            this.lblCamAngle.AutoSize = true;
-            this.lblCamAngle.Location = new System.Drawing.Point(285, 48);
-            this.lblCamAngle.Name = "lblCamAngle";
-            this.lblCamAngle.Size = new System.Drawing.Size(20, 13);
-            this.lblCamAngle.TabIndex = 25;
-            this.lblCamAngle.Text = "Y: ";
+            this.serialPort.BaudRate = 115200;
+            this.serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort_DataReceived);
             // 
-            // lblCamDist
+            // btnGrabCamHole0
             // 
-            this.lblCamDist.AutoSize = true;
-            this.lblCamDist.Location = new System.Drawing.Point(285, 29);
-            this.lblCamDist.Name = "lblCamDist";
-            this.lblCamDist.Size = new System.Drawing.Size(20, 13);
-            this.lblCamDist.TabIndex = 24;
-            this.lblCamDist.Text = "X: ";
+            this.btnGrabCamHole0.Location = new System.Drawing.Point(8, 20);
+            this.btnGrabCamHole0.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrabCamHole0.Name = "btnGrabCamHole0";
+            this.btnGrabCamHole0.Size = new System.Drawing.Size(66, 21);
+            this.btnGrabCamHole0.TabIndex = 3;
+            this.btnGrabCamHole0.Text = "Set Hole 0";
+            this.btnGrabCamHole0.UseVisualStyleBackColor = true;
+            this.btnGrabCamHole0.Click += new System.EventHandler(this.btnGrabCamHole0_Click);
             // 
-            // label42
+            // btnGrabCamHole2
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(250, 49);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(37, 13);
-            this.label42.TabIndex = 23;
-            this.label42.Text = "Angle:";
+            this.btnGrabCamHole2.Location = new System.Drawing.Point(135, 20);
+            this.btnGrabCamHole2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGrabCamHole2.Name = "btnGrabCamHole2";
+            this.btnGrabCamHole2.Size = new System.Drawing.Size(66, 21);
+            this.btnGrabCamHole2.TabIndex = 33;
+            this.btnGrabCamHole2.Text = "Set Hole 2";
+            this.btnGrabCamHole2.UseVisualStyleBackColor = true;
+            this.btnGrabCamHole2.Click += new System.EventHandler(this.btnGrabCamHole2_Click);
             // 
-            // label43
+            // groupBox3
             // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(259, 29);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(28, 13);
-            this.label43.TabIndex = 22;
-            this.label43.Text = "Dist:";
+            this.groupBox3.Controls.Add(this.lblPCBRotationAngle);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.lblPCBDist);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.lbl_PCB_Angle);
+            this.groupBox3.Controls.Add(this.btnGrabCamHole2);
+            this.groupBox3.Controls.Add(this.label46);
+            this.groupBox3.Controls.Add(this.lbl_PCB_Scale);
+            this.groupBox3.Controls.Add(this.lblPCBHole2_Y);
+            this.groupBox3.Controls.Add(this.btnGrabCamHole0);
+            this.groupBox3.Controls.Add(this.label47);
+            this.groupBox3.Controls.Add(this.label67);
+            this.groupBox3.Controls.Add(this.lblPCBHole2_X);
+            this.groupBox3.Controls.Add(this.label69);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.lblPCBHole0_Y);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.lblPCBHole0_X);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Location = new System.Drawing.Point(298, 10);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(247, 123);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Camera Holes";
             // 
-            // label35
+            // lblPCBRotationAngle
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(18, 51);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(45, 13);
-            this.label35.TabIndex = 21;
-            this.label35.Text = "Hole #2";
+            this.lblPCBRotationAngle.AutoSize = true;
+            this.lblPCBRotationAngle.Location = new System.Drawing.Point(199, 100);
+            this.lblPCBRotationAngle.Name = "lblPCBRotationAngle";
+            this.lblPCBRotationAngle.Size = new System.Drawing.Size(40, 13);
+            this.lblPCBRotationAngle.TabIndex = 37;
+            this.lblPCBRotationAngle.Text = "90.000";
             // 
-            // label36
+            // label10
             // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(160, 51);
-            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(14, 13);
-            this.label36.TabIndex = 20;
-            this.label36.Text = "Y";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(124, 100);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 13);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "PCB Rotation :";
             // 
-            // txt_Hole_2_Y
+            // lblPCBDist
             // 
-            this.txt_Hole_2_Y.Location = new System.Drawing.Point(178, 48);
-            this.txt_Hole_2_Y.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_Hole_2_Y.Name = "txt_Hole_2_Y";
-            this.txt_Hole_2_Y.Size = new System.Drawing.Size(53, 20);
-            this.txt_Hole_2_Y.TabIndex = 19;
-            this.txt_Hole_2_Y.Text = "32.9";
-            this.txt_Hole_2_Y.TextChanged += new System.EventHandler(this.txt_Hole_Zero_X_TextChanged);
+            this.lblPCBDist.AutoSize = true;
+            this.lblPCBDist.Location = new System.Drawing.Point(28, 84);
+            this.lblPCBDist.Name = "lblPCBDist";
+            this.lblPCBDist.Size = new System.Drawing.Size(46, 13);
+            this.lblPCBDist.TabIndex = 35;
+            this.lblPCBDist.Text = "999.000";
             // 
-            // label37
+            // label5
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(79, 51);
-            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(14, 13);
-            this.label37.TabIndex = 18;
-            this.label37.Text = "X";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(5, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Dist:";
             // 
-            // txt_Hole_2_X
+            // lblPCBHole2_Y
             // 
-            this.txt_Hole_2_X.Location = new System.Drawing.Point(96, 48);
-            this.txt_Hole_2_X.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_Hole_2_X.Name = "txt_Hole_2_X";
-            this.txt_Hole_2_X.Size = new System.Drawing.Size(53, 20);
-            this.txt_Hole_2_X.TabIndex = 17;
-            this.txt_Hole_2_X.Text = "64.699";
-            this.txt_Hole_2_X.TextChanged += new System.EventHandler(this.txt_Hole_Zero_X_TextChanged);
+            this.lblPCBHole2_Y.AutoSize = true;
+            this.lblPCBHole2_Y.Location = new System.Drawing.Point(160, 64);
+            this.lblPCBHole2_Y.Name = "lblPCBHole2_Y";
+            this.lblPCBHole2_Y.Size = new System.Drawing.Size(20, 13);
+            this.lblPCBHole2_Y.TabIndex = 26;
+            this.lblPCBHole2_Y.Text = "X: ";
             // 
-            // label34
+            // label67
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(18, 24);
-            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(57, 13);
-            this.label34.TabIndex = 16;
-            this.label34.Text = "Hole Zero ";
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(134, 64);
+            this.label67.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(20, 13);
+            this.label67.TabIndex = 25;
+            this.label67.Text = "Y :";
             // 
-            // label32
+            // lblPCBHole2_X
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(160, 25);
-            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(14, 13);
-            this.label32.TabIndex = 15;
-            this.label32.Text = "Y";
+            this.lblPCBHole2_X.AutoSize = true;
+            this.lblPCBHole2_X.Location = new System.Drawing.Point(89, 65);
+            this.lblPCBHole2_X.Name = "lblPCBHole2_X";
+            this.lblPCBHole2_X.Size = new System.Drawing.Size(20, 13);
+            this.lblPCBHole2_X.TabIndex = 24;
+            this.lblPCBHole2_X.Text = "X: ";
             // 
-            // txt_Hole_Zero_Y
+            // label69
             // 
-            this.txt_Hole_Zero_Y.Location = new System.Drawing.Point(178, 22);
-            this.txt_Hole_Zero_Y.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_Hole_Zero_Y.Name = "txt_Hole_Zero_Y";
-            this.txt_Hole_Zero_Y.Size = new System.Drawing.Size(53, 20);
-            this.txt_Hole_Zero_Y.TabIndex = 14;
-            this.txt_Hole_Zero_Y.Text = "65.7";
-            this.txt_Hole_Zero_Y.TextChanged += new System.EventHandler(this.txt_Hole_Zero_X_TextChanged);
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(63, 65);
+            this.label69.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(20, 13);
+            this.label69.TabIndex = 23;
+            this.label69.Text = "X :";
             // 
-            // label33
+            // label9
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(79, 25);
-            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(14, 13);
-            this.label33.TabIndex = 13;
-            this.label33.Text = "X";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 65);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 13);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Hole #2";
             // 
-            // txt_Hole_Zero_X
+            // lblPCBHole0_Y
             // 
-            this.txt_Hole_Zero_X.Location = new System.Drawing.Point(96, 22);
-            this.txt_Hole_Zero_X.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_Hole_Zero_X.Name = "txt_Hole_Zero_X";
-            this.txt_Hole_Zero_X.Size = new System.Drawing.Size(53, 20);
-            this.txt_Hole_Zero_X.TabIndex = 12;
-            this.txt_Hole_Zero_X.Text = "7.001";
-            this.txt_Hole_Zero_X.TextChanged += new System.EventHandler(this.txt_Hole_Zero_X_TextChanged);
+            this.lblPCBHole0_Y.AutoSize = true;
+            this.lblPCBHole0_Y.Location = new System.Drawing.Point(160, 45);
+            this.lblPCBHole0_Y.Name = "lblPCBHole0_Y";
+            this.lblPCBHole0_Y.Size = new System.Drawing.Size(20, 13);
+            this.lblPCBHole0_Y.TabIndex = 21;
+            this.lblPCBHole0_Y.Text = "X: ";
             // 
-            // label17
+            // label6
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 15);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(76, 13);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Select Camera";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(134, 45);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Y :";
+            // 
+            // lblPCBHole0_X
+            // 
+            this.lblPCBHole0_X.AutoSize = true;
+            this.lblPCBHole0_X.Location = new System.Drawing.Point(89, 46);
+            this.lblPCBHole0_X.Name = "lblPCBHole0_X";
+            this.lblPCBHole0_X.Size = new System.Drawing.Size(20, 13);
+            this.lblPCBHole0_X.TabIndex = 19;
+            this.lblPCBHole0_X.Text = "X: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Hole Zero ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(63, 46);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "X :";
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.cBCommand);
+            this.tabPage7.Controls.Add(this.btnGRBLReset);
+            this.tabPage7.Controls.Add(this.btnGRBLCommand4);
+            this.tabPage7.Controls.Add(this.btnGRBLCommand3);
+            this.tabPage7.Controls.Add(this.btnGRBLCommand2);
+            this.tabPage7.Controls.Add(this.btnGRBLCommand1);
+            this.tabPage7.Controls.Add(this.btnGRBLCommand0);
+            this.tabPage7.Controls.Add(this.btnSend);
+            this.tabPage7.Controls.Add(this.btnClear);
+            this.tabPage7.Controls.Add(this.groupBox7);
+            this.tabPage7.Controls.Add(this.rtbLog);
+            this.tabPage7.Controls.Add(this.cbPort);
+            this.tabPage7.Controls.Add(this.cbBaud);
+            this.tabPage7.Controls.Add(this.btnScanPort);
+            this.tabPage7.Controls.Add(this.btn_OpenPort);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(711, 607);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "GRBL";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // cBCommand
+            // 
+            this.cBCommand.FormattingEnabled = true;
+            this.cBCommand.Items.AddRange(new object[] {
+            "$H (Homing)",
+            "G90 G1 X1 F500 (absolute)",
+            "G91 G1 X1 F500 (relarive)"});
+            this.cBCommand.Location = new System.Drawing.Point(88, 336);
+            this.cBCommand.Name = "cBCommand";
+            this.cBCommand.Size = new System.Drawing.Size(156, 21);
+            this.cBCommand.TabIndex = 41;
+            this.cBCommand.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cBCommand_KeyUp);
+            // 
+            // btnGRBLReset
+            // 
+            this.btnGRBLReset.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGRBLReset.Location = new System.Drawing.Point(204, 358);
+            this.btnGRBLReset.Name = "btnGRBLReset";
+            this.btnGRBLReset.Size = new System.Drawing.Size(89, 23);
+            this.btnGRBLReset.TabIndex = 40;
+            this.btnGRBLReset.Text = "RESET";
+            this.btnGRBLReset.UseVisualStyleBackColor = true;
+            // 
+            // btnGRBLCommand4
+            // 
+            this.btnGRBLCommand4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGRBLCommand4.Location = new System.Drawing.Point(166, 358);
+            this.btnGRBLCommand4.Name = "btnGRBLCommand4";
+            this.btnGRBLCommand4.Size = new System.Drawing.Size(32, 23);
+            this.btnGRBLCommand4.TabIndex = 39;
+            this.btnGRBLCommand4.Text = "$X";
+            this.btnGRBLCommand4.UseVisualStyleBackColor = true;
+            // 
+            // btnGRBLCommand3
+            // 
+            this.btnGRBLCommand3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGRBLCommand3.Location = new System.Drawing.Point(128, 358);
+            this.btnGRBLCommand3.Name = "btnGRBLCommand3";
+            this.btnGRBLCommand3.Size = new System.Drawing.Size(32, 23);
+            this.btnGRBLCommand3.TabIndex = 38;
+            this.btnGRBLCommand3.Text = "$N";
+            this.btnGRBLCommand3.UseVisualStyleBackColor = true;
+            // 
+            // btnGRBLCommand2
+            // 
+            this.btnGRBLCommand2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGRBLCommand2.Location = new System.Drawing.Point(90, 358);
+            this.btnGRBLCommand2.Name = "btnGRBLCommand2";
+            this.btnGRBLCommand2.Size = new System.Drawing.Size(32, 23);
+            this.btnGRBLCommand2.TabIndex = 37;
+            this.btnGRBLCommand2.Text = "$#";
+            this.btnGRBLCommand2.UseVisualStyleBackColor = true;
+            // 
+            // btnGRBLCommand1
+            // 
+            this.btnGRBLCommand1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGRBLCommand1.Location = new System.Drawing.Point(52, 358);
+            this.btnGRBLCommand1.Name = "btnGRBLCommand1";
+            this.btnGRBLCommand1.Size = new System.Drawing.Size(32, 23);
+            this.btnGRBLCommand1.TabIndex = 36;
+            this.btnGRBLCommand1.Text = "$$";
+            this.btnGRBLCommand1.UseVisualStyleBackColor = true;
+            this.btnGRBLCommand1.Click += new System.EventHandler(this.btnGRBLCommand1_Click_1);
+            // 
+            // btnGRBLCommand0
+            // 
+            this.btnGRBLCommand0.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGRBLCommand0.Location = new System.Drawing.Point(14, 358);
+            this.btnGRBLCommand0.Name = "btnGRBLCommand0";
+            this.btnGRBLCommand0.Size = new System.Drawing.Size(32, 23);
+            this.btnGRBLCommand0.TabIndex = 35;
+            this.btnGRBLCommand0.Text = "$";
+            this.btnGRBLCommand0.UseVisualStyleBackColor = true;
+            // 
+            // btnSend
+            // 
+            this.btnSend.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSend.Location = new System.Drawing.Point(250, 334);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(43, 23);
+            this.btnSend.TabIndex = 34;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnClear.Location = new System.Drawing.Point(14, 334);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(70, 23);
+            this.btnClear.TabIndex = 33;
+            this.btnClear.Text = "Clear Log";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.btnCheckGRBLResult);
+            this.groupBox7.Controls.Add(this.btnCheckGRBL);
+            this.groupBox7.Controls.Add(this.cbStatus);
+            this.groupBox7.Controls.Add(this.lblSrA);
+            this.groupBox7.Controls.Add(this.lblSrLn);
+            this.groupBox7.Controls.Add(this.label51);
+            this.groupBox7.Controls.Add(this.lblSrState);
+            this.groupBox7.Controls.Add(this.lblSrOv);
+            this.groupBox7.Controls.Add(this.label61);
+            this.groupBox7.Controls.Add(this.label62);
+            this.groupBox7.Controls.Add(this.lblSrPn);
+            this.groupBox7.Controls.Add(this.lblSrPos);
+            this.groupBox7.Controls.Add(this.label63);
+            this.groupBox7.Controls.Add(this.label64);
+            this.groupBox7.Controls.Add(this.lblSrFS);
+            this.groupBox7.Controls.Add(this.lblSrBf);
+            this.groupBox7.Controls.Add(this.label65);
+            this.groupBox7.Location = new System.Drawing.Point(14, 37);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(276, 94);
+            this.groupBox7.TabIndex = 32;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Real-time Status Report";
+            // 
+            // btnCheckGRBLResult
+            // 
+            this.btnCheckGRBLResult.Enabled = false;
+            this.btnCheckGRBLResult.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCheckGRBLResult.Location = new System.Drawing.Point(254, 71);
+            this.btnCheckGRBLResult.Name = "btnCheckGRBLResult";
+            this.btnCheckGRBLResult.Size = new System.Drawing.Size(20, 20);
+            this.btnCheckGRBLResult.TabIndex = 32;
+            this.btnCheckGRBLResult.Text = "?";
+            this.btnCheckGRBLResult.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckGRBL
+            // 
+            this.btnCheckGRBL.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCheckGRBL.Location = new System.Drawing.Point(177, 71);
+            this.btnCheckGRBL.Name = "btnCheckGRBL";
+            this.btnCheckGRBL.Size = new System.Drawing.Size(78, 20);
+            this.btnCheckGRBL.TabIndex = 31;
+            this.btnCheckGRBL.Text = "Check GRBL";
+            this.btnCheckGRBL.UseVisualStyleBackColor = true;
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.AutoSize = true;
+            this.cbStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cbStatus.Location = new System.Drawing.Point(5, 73);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(168, 17);
+            this.cbStatus.TabIndex = 17;
+            this.cbStatus.Text = "Show Real-time Status Report";
+            this.cbStatus.UseVisualStyleBackColor = true;
+            // 
+            // lblSrA
+            // 
+            this.lblSrA.AutoSize = true;
+            this.lblSrA.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSrA.Location = new System.Drawing.Point(200, 56);
+            this.lblSrA.Name = "lblSrA";
+            this.lblSrA.Size = new System.Drawing.Size(29, 13);
+            this.lblSrA.TabIndex = 28;
+            this.lblSrA.Text = "SFM";
+            // 
+            // lblSrLn
+            // 
+            this.lblSrLn.AutoSize = true;
+            this.lblSrLn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSrLn.Location = new System.Drawing.Point(23, 56);
+            this.lblSrLn.Name = "lblSrLn";
+            this.lblSrLn.Size = new System.Drawing.Size(37, 13);
+            this.lblSrLn.TabIndex = 30;
+            this.lblSrLn.Text = "99999";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label51.Location = new System.Drawing.Point(174, 56);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(17, 13);
+            this.label51.TabIndex = 27;
+            this.label51.Text = "A:";
+            // 
+            // lblSrState
+            // 
+            this.lblSrState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblSrState.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSrState.Location = new System.Drawing.Point(2, 16);
+            this.lblSrState.Name = "lblSrState";
+            this.lblSrState.Size = new System.Drawing.Size(57, 21);
+            this.lblSrState.TabIndex = 14;
+            this.lblSrState.Text = "Status";
+            this.lblSrState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblSrOv
+            // 
+            this.lblSrOv.AutoSize = true;
+            this.lblSrOv.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSrOv.Location = new System.Drawing.Point(94, 56);
+            this.lblSrOv.Name = "lblSrOv";
+            this.lblSrOv.Size = new System.Drawing.Size(67, 13);
+            this.lblSrOv.TabIndex = 26;
+            this.lblSrOv.Text = "100,100,100";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label61.Location = new System.Drawing.Point(2, 56);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(22, 13);
+            this.label61.TabIndex = 29;
+            this.label61.Text = "Ln:";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label62.Location = new System.Drawing.Point(70, 56);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(24, 13);
+            this.label62.TabIndex = 25;
+            this.label62.Text = "Ov:";
+            // 
+            // lblSrPn
+            // 
+            this.lblSrPn.AutoSize = true;
+            this.lblSrPn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSrPn.Location = new System.Drawing.Point(200, 43);
+            this.lblSrPn.Name = "lblSrPn";
+            this.lblSrPn.Size = new System.Drawing.Size(66, 13);
+            this.lblSrPn.TabIndex = 24;
+            this.lblSrPn.Text = "XYZPDHRS";
+            // 
+            // lblSrPos
+            // 
+            this.lblSrPos.AutoSize = true;
+            this.lblSrPos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSrPos.Location = new System.Drawing.Point(61, 16);
+            this.lblSrPos.Name = "lblSrPos";
+            this.lblSrPos.Size = new System.Drawing.Size(103, 26);
+            this.lblSrPos.TabIndex = 15;
+            this.lblSrPos.Text = "0.000,-10.000,5.000\r\n0.000";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label63.Location = new System.Drawing.Point(174, 43);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(23, 13);
+            this.label63.TabIndex = 23;
+            this.label63.Text = "Pn:";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label64.Location = new System.Drawing.Point(2, 43);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(20, 13);
+            this.label64.TabIndex = 19;
+            this.label64.Text = "Bf:";
+            // 
+            // lblSrFS
+            // 
+            this.lblSrFS.AutoSize = true;
+            this.lblSrFS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSrFS.Location = new System.Drawing.Point(94, 43);
+            this.lblSrFS.Name = "lblSrFS";
+            this.lblSrFS.Size = new System.Drawing.Size(52, 13);
+            this.lblSrFS.TabIndex = 22;
+            this.lblSrFS.Text = "500,8000";
+            // 
+            // lblSrBf
+            // 
+            this.lblSrBf.AutoSize = true;
+            this.lblSrBf.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblSrBf.Location = new System.Drawing.Point(23, 43);
+            this.lblSrBf.Name = "lblSrBf";
+            this.lblSrBf.Size = new System.Drawing.Size(40, 13);
+            this.lblSrBf.TabIndex = 20;
+            this.lblSrBf.Text = "15,128";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label65.Location = new System.Drawing.Point(70, 43);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(23, 13);
+            this.label65.TabIndex = 21;
+            this.label65.Text = "FS:";
+            // 
+            // rtbLog
+            // 
+            this.rtbLog.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbLog.Location = new System.Drawing.Point(14, 134);
+            this.rtbLog.Name = "rtbLog";
+            this.rtbLog.Size = new System.Drawing.Size(403, 194);
+            this.rtbLog.TabIndex = 11;
+            this.rtbLog.Text = "";
+            // 
+            // cbPort
+            // 
+            this.cbPort.FormattingEnabled = true;
+            this.cbPort.Location = new System.Drawing.Point(14, 10);
+            this.cbPort.Name = "cbPort";
+            this.cbPort.Size = new System.Drawing.Size(58, 21);
+            this.cbPort.TabIndex = 6;
+            this.cbPort.SelectedIndexChanged += new System.EventHandler(this.cbPort_SelectedIndexChanged_1);
+            // 
+            // cbBaud
+            // 
+            this.cbBaud.FormattingEnabled = true;
+            this.cbBaud.Items.AddRange(new object[] {
+            "115200"});
+            this.cbBaud.Location = new System.Drawing.Point(75, 10);
+            this.cbBaud.Name = "cbBaud";
+            this.cbBaud.Size = new System.Drawing.Size(66, 21);
+            this.cbBaud.TabIndex = 7;
+            this.cbBaud.Text = "115200";
+            // 
+            // btnScanPort
+            // 
+            this.btnScanPort.Location = new System.Drawing.Point(194, 9);
+            this.btnScanPort.Name = "btnScanPort";
+            this.btnScanPort.Size = new System.Drawing.Size(48, 21);
+            this.btnScanPort.TabIndex = 9;
+            this.btnScanPort.Text = "Scan";
+            this.btnScanPort.UseVisualStyleBackColor = true;
+            this.btnScanPort.Click += new System.EventHandler(this.btnScanPorts_Click);
+            // 
+            // btn_OpenPort
+            // 
+            this.btn_OpenPort.Location = new System.Drawing.Point(143, 9);
+            this.btn_OpenPort.Name = "btn_OpenPort";
+            this.btn_OpenPort.Size = new System.Drawing.Size(48, 21);
+            this.btn_OpenPort.TabIndex = 8;
+            this.btn_OpenPort.Text = "Open";
+            this.btn_OpenPort.UseVisualStyleBackColor = true;
+            this.btn_OpenPort.Click += new System.EventHandler(this.btn_OpenPort_Click_1);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.dataGridView1);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(711, 607);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Drills";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DrillNum,
+            this.Size,
+            this.NumHoles,
+            this.Colour});
+            this.dataGridView1.Location = new System.Drawing.Point(18, 14);
+            this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Size = new System.Drawing.Size(353, 105);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // DrillNum
+            // 
+            this.DrillNum.HeaderText = "#";
+            this.DrillNum.Name = "DrillNum";
+            this.DrillNum.Width = 50;
+            // 
+            // Size
+            // 
+            this.Size.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Size.HeaderText = "Size";
+            this.Size.Name = "Size";
+            this.Size.Width = 56;
+            // 
+            // NumHoles
+            // 
+            this.NumHoles.HeaderText = "Num Holes";
+            this.NumHoles.Name = "NumHoles";
+            // 
+            // Colour
+            // 
+            this.Colour.HeaderText = "Colour";
+            this.Colour.Name = "Colour";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.richTextBox1);
+            this.tabPage4.Controls.Add(this.groupBox6);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(711, 607);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Generate";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(14, 180);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(473, 474);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.btnDrill);
+            this.groupBox6.Controls.Add(this.chk_IncludeHoleInfo);
+            this.groupBox6.Controls.Add(this.chk_LeaveZHeight);
+            this.groupBox6.Controls.Add(this.chk_IgnorePause);
+            this.groupBox6.Controls.Add(this.cb_Drill);
+            this.groupBox6.Controls.Add(this.txtDrillDepth);
+            this.groupBox6.Controls.Add(this.label48);
+            this.groupBox6.Controls.Add(this.txtSafeZHeight);
+            this.groupBox6.Controls.Add(this.label39);
+            this.groupBox6.Controls.Add(this.textBox3);
+            this.groupBox6.Controls.Add(this.label38);
+            this.groupBox6.Controls.Add(this.btn_GenFile);
+            this.groupBox6.Location = new System.Drawing.Point(10, 9);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(478, 157);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Generate Options";
+            // 
+            // btnDrill
+            // 
+            this.btnDrill.BackColor = System.Drawing.Color.White;
+            this.btnDrill.Location = new System.Drawing.Point(79, 116);
+            this.btnDrill.Name = "btnDrill";
+            this.btnDrill.Size = new System.Drawing.Size(27, 25);
+            this.btnDrill.TabIndex = 42;
+            this.btnDrill.Text = "1";
+            this.btnDrill.UseVisualStyleBackColor = false;
+            this.btnDrill.Click += new System.EventHandler(this.btnDrill_Click);
+            // 
+            // chk_IncludeHoleInfo
+            // 
+            this.chk_IncludeHoleInfo.AutoSize = true;
+            this.chk_IncludeHoleInfo.Location = new System.Drawing.Point(181, 72);
+            this.chk_IncludeHoleInfo.Name = "chk_IncludeHoleInfo";
+            this.chk_IncludeHoleInfo.Size = new System.Drawing.Size(145, 17);
+            this.chk_IncludeHoleInfo.TabIndex = 41;
+            this.chk_IncludeHoleInfo.Text = "Include Original Hole Info";
+            this.chk_IncludeHoleInfo.UseVisualStyleBackColor = true;
+            // 
+            // chk_LeaveZHeight
+            // 
+            this.chk_LeaveZHeight.AutoSize = true;
+            this.chk_LeaveZHeight.Location = new System.Drawing.Point(181, 49);
+            this.chk_LeaveZHeight.Name = "chk_LeaveZHeight";
+            this.chk_LeaveZHeight.Size = new System.Drawing.Size(147, 17);
+            this.chk_LeaveZHeight.TabIndex = 40;
+            this.chk_LeaveZHeight.Text = "Leave Z at Safe Z Height";
+            this.chk_LeaveZHeight.UseVisualStyleBackColor = true;
+            // 
+            // chk_IgnorePause
+            // 
+            this.chk_IgnorePause.AutoSize = true;
+            this.chk_IgnorePause.Location = new System.Drawing.Point(181, 21);
+            this.chk_IgnorePause.Name = "chk_IgnorePause";
+            this.chk_IgnorePause.Size = new System.Drawing.Size(89, 17);
+            this.chk_IgnorePause.TabIndex = 39;
+            this.chk_IgnorePause.Text = "Ignore Pause";
+            this.chk_IgnorePause.UseVisualStyleBackColor = true;
+            // 
+            // cb_Drill
+            // 
+            this.cb_Drill.AutoSize = true;
+            this.cb_Drill.Location = new System.Drawing.Point(30, 121);
+            this.cb_Drill.Name = "cb_Drill";
+            this.cb_Drill.Size = new System.Drawing.Size(43, 17);
+            this.cb_Drill.TabIndex = 38;
+            this.cb_Drill.Text = "Drill";
+            this.cb_Drill.UseVisualStyleBackColor = true;
+            // 
+            // txtDrillDepth
+            // 
+            this.txtDrillDepth.Location = new System.Drawing.Point(121, 68);
+            this.txtDrillDepth.Name = "txtDrillDepth";
+            this.txtDrillDepth.Size = new System.Drawing.Size(31, 20);
+            this.txtDrillDepth.TabIndex = 37;
+            this.txtDrillDepth.Text = "36.5";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(43, 71);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(72, 13);
+            this.label48.TabIndex = 36;
+            this.label48.Text = "Drill Z Depth :";
+            // 
+            // txtSafeZHeight
+            // 
+            this.txtSafeZHeight.Location = new System.Drawing.Point(121, 47);
+            this.txtSafeZHeight.Name = "txtSafeZHeight";
+            this.txtSafeZHeight.Size = new System.Drawing.Size(31, 20);
+            this.txtSafeZHeight.TabIndex = 35;
+            this.txtSafeZHeight.Text = "36.5";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(36, 50);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(79, 13);
+            this.label39.TabIndex = 34;
+            this.label39.Text = "Safe Z Height :";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(121, 18);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(31, 20);
+            this.textBox3.TabIndex = 33;
+            this.textBox3.Text = "0.5";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(20, 21);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(95, 13);
+            this.label38.TabIndex = 32;
+            this.label38.Text = "Pause Time (sec) :";
+            // 
+            // btn_GenFile
+            // 
+            this.btn_GenFile.Location = new System.Drawing.Point(414, 11);
+            this.btn_GenFile.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_GenFile.Name = "btn_GenFile";
+            this.btn_GenFile.Size = new System.Drawing.Size(59, 32);
+            this.btn_GenFile.TabIndex = 31;
+            this.btn_GenFile.Text = "Gen File";
+            this.btn_GenFile.UseVisualStyleBackColor = true;
+            this.btn_GenFile.Click += new System.EventHandler(this.btn_GenFile_Click);
             // 
             // tabPage3
             // 
@@ -947,7 +1241,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(752, 669);
+            this.tabPage3.Size = new System.Drawing.Size(711, 607);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Camera Offset";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1252,648 +1546,230 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "1. Home Drill";
             // 
-            // tabPage4
+            // tabPage2
             // 
-            this.tabPage4.Controls.Add(this.richTextBox1);
-            this.tabPage4.Controls.Add(this.groupBox6);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(752, 669);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Generate";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.txtFeed);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.txtScanHeight);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.btnStreamCode);
+            this.tabPage2.Controls.Add(this.btn_camera_start);
+            this.tabPage2.Controls.Add(this.picBox_Video);
+            this.tabPage2.Controls.Add(this.chk_Jog);
+            this.tabPage2.Controls.Add(this.cmb_Camera);
+            this.tabPage2.Controls.Add(this.lblMachinePosition);
+            this.tabPage2.Controls.Add(this.label66);
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(711, 607);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Camera";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // txtFeed
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(14, 180);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(473, 474);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.chk_IncludeHoleInfo);
-            this.groupBox6.Controls.Add(this.chk_LeaveZHeight);
-            this.groupBox6.Controls.Add(this.chk_IgnorePause);
-            this.groupBox6.Controls.Add(this.cb_Drill);
-            this.groupBox6.Controls.Add(this.txtDrillDepth);
-            this.groupBox6.Controls.Add(this.label48);
-            this.groupBox6.Controls.Add(this.txtSafeZHeight);
-            this.groupBox6.Controls.Add(this.label39);
-            this.groupBox6.Controls.Add(this.textBox3);
-            this.groupBox6.Controls.Add(this.label38);
-            this.groupBox6.Controls.Add(this.btn_GenFile);
-            this.groupBox6.Location = new System.Drawing.Point(10, 9);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(478, 157);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Generate Options";
-            // 
-            // chk_IncludeHoleInfo
-            // 
-            this.chk_IncludeHoleInfo.AutoSize = true;
-            this.chk_IncludeHoleInfo.Location = new System.Drawing.Point(181, 72);
-            this.chk_IncludeHoleInfo.Name = "chk_IncludeHoleInfo";
-            this.chk_IncludeHoleInfo.Size = new System.Drawing.Size(145, 17);
-            this.chk_IncludeHoleInfo.TabIndex = 41;
-            this.chk_IncludeHoleInfo.Text = "Include Original Hole Info";
-            this.chk_IncludeHoleInfo.UseVisualStyleBackColor = true;
-            // 
-            // chk_LeaveZHeight
-            // 
-            this.chk_LeaveZHeight.AutoSize = true;
-            this.chk_LeaveZHeight.Location = new System.Drawing.Point(181, 49);
-            this.chk_LeaveZHeight.Name = "chk_LeaveZHeight";
-            this.chk_LeaveZHeight.Size = new System.Drawing.Size(147, 17);
-            this.chk_LeaveZHeight.TabIndex = 40;
-            this.chk_LeaveZHeight.Text = "Leave Z at Safe Z Height";
-            this.chk_LeaveZHeight.UseVisualStyleBackColor = true;
-            // 
-            // chk_IgnorePause
-            // 
-            this.chk_IgnorePause.AutoSize = true;
-            this.chk_IgnorePause.Location = new System.Drawing.Point(181, 21);
-            this.chk_IgnorePause.Name = "chk_IgnorePause";
-            this.chk_IgnorePause.Size = new System.Drawing.Size(89, 17);
-            this.chk_IgnorePause.TabIndex = 39;
-            this.chk_IgnorePause.Text = "Ignore Pause";
-            this.chk_IgnorePause.UseVisualStyleBackColor = true;
-            // 
-            // cb_Drill
-            // 
-            this.cb_Drill.AutoSize = true;
-            this.cb_Drill.Location = new System.Drawing.Point(30, 121);
-            this.cb_Drill.Name = "cb_Drill";
-            this.cb_Drill.Size = new System.Drawing.Size(43, 17);
-            this.cb_Drill.TabIndex = 38;
-            this.cb_Drill.Text = "Drill";
-            this.cb_Drill.UseVisualStyleBackColor = true;
-            // 
-            // txtDrillDepth
-            // 
-            this.txtDrillDepth.Location = new System.Drawing.Point(121, 68);
-            this.txtDrillDepth.Name = "txtDrillDepth";
-            this.txtDrillDepth.Size = new System.Drawing.Size(31, 20);
-            this.txtDrillDepth.TabIndex = 37;
-            this.txtDrillDepth.Text = "36.5";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(43, 71);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(72, 13);
-            this.label48.TabIndex = 36;
-            this.label48.Text = "Drill Z Depth :";
-            // 
-            // txtSafeZHeight
-            // 
-            this.txtSafeZHeight.Location = new System.Drawing.Point(121, 47);
-            this.txtSafeZHeight.Name = "txtSafeZHeight";
-            this.txtSafeZHeight.Size = new System.Drawing.Size(31, 20);
-            this.txtSafeZHeight.TabIndex = 35;
-            this.txtSafeZHeight.Text = "36.5";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(36, 50);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(79, 13);
-            this.label39.TabIndex = 34;
-            this.label39.Text = "Safe Z Height :";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(121, 18);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(31, 20);
-            this.textBox3.TabIndex = 33;
-            this.textBox3.Text = "0.5";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(20, 21);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(95, 13);
-            this.label38.TabIndex = 32;
-            this.label38.Text = "Pause Time (sec) :";
-            // 
-            // btn_GenFile
-            // 
-            this.btn_GenFile.Location = new System.Drawing.Point(405, 116);
-            this.btn_GenFile.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_GenFile.Name = "btn_GenFile";
-            this.btn_GenFile.Size = new System.Drawing.Size(68, 32);
-            this.btn_GenFile.TabIndex = 31;
-            this.btn_GenFile.Text = "Gen File";
-            this.btn_GenFile.UseVisualStyleBackColor = true;
-            this.btn_GenFile.Click += new System.EventHandler(this.btn_GenFile_Click);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.gb_Rotation);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(752, 669);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Rotation";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.pic_Box_Res);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(2, 165);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(748, 502);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Result";
-            // 
-            // pic_Box_Res
-            // 
-            this.pic_Box_Res.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic_Box_Res.Location = new System.Drawing.Point(3, 16);
-            this.pic_Box_Res.Name = "pic_Box_Res";
-            this.pic_Box_Res.Size = new System.Drawing.Size(742, 483);
-            this.pic_Box_Res.TabIndex = 0;
-            this.pic_Box_Res.TabStop = false;
-            // 
-            // gb_Rotation
-            // 
-            this.gb_Rotation.Controls.Add(this.label53);
-            this.gb_Rotation.Controls.Add(this.txtScale);
-            this.gb_Rotation.Controls.Add(this.label16);
-            this.gb_Rotation.Controls.Add(this.label15);
-            this.gb_Rotation.Controls.Add(this.txt_Offset_Y);
-            this.gb_Rotation.Controls.Add(this.txt_Offset_X);
-            this.gb_Rotation.Controls.Add(this.label11);
-            this.gb_Rotation.Controls.Add(this.label14);
-            this.gb_Rotation.Controls.Add(this.button2);
-            this.gb_Rotation.Controls.Add(this.button1);
-            this.gb_Rotation.Controls.Add(this.txtAngle);
-            this.gb_Rotation.Controls.Add(this.label10);
-            this.gb_Rotation.Controls.Add(this.textBox2);
-            this.gb_Rotation.Controls.Add(this.textBox1);
-            this.gb_Rotation.Controls.Add(this.label12);
-            this.gb_Rotation.Controls.Add(this.label13);
-            this.gb_Rotation.Location = new System.Drawing.Point(5, 11);
-            this.gb_Rotation.Name = "gb_Rotation";
-            this.gb_Rotation.Size = new System.Drawing.Size(490, 149);
-            this.gb_Rotation.TabIndex = 4;
-            this.gb_Rotation.TabStop = false;
-            this.gb_Rotation.Text = "Rotation";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(18, 40);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(82, 13);
-            this.label53.TabIndex = 24;
-            this.label53.Text = "Hole 0 Location";
-            // 
-            // txtScale
-            // 
-            this.txtScale.Location = new System.Drawing.Point(392, 71);
-            this.txtScale.Name = "txtScale";
-            this.txtScale.Size = new System.Drawing.Size(60, 20);
-            this.txtScale.TabIndex = 23;
-            this.txtScale.Text = "1";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(352, 74);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(34, 13);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Scale";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(275, 20);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(37, 13);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "OffSet";
-            // 
-            // txt_Offset_Y
-            // 
-            this.txt_Offset_Y.Location = new System.Drawing.Point(302, 71);
-            this.txt_Offset_Y.Name = "txt_Offset_Y";
-            this.txt_Offset_Y.Size = new System.Drawing.Size(40, 20);
-            this.txt_Offset_Y.TabIndex = 20;
-            this.txt_Offset_Y.Text = "20";
-            // 
-            // txt_Offset_X
-            // 
-            this.txt_Offset_X.Location = new System.Drawing.Point(302, 46);
-            this.txt_Offset_X.Name = "txt_Offset_X";
-            this.txt_Offset_X.Size = new System.Drawing.Size(40, 20);
-            this.txt_Offset_X.TabIndex = 19;
-            this.txt_Offset_X.Text = "-20";
+            this.txtFeed.Location = new System.Drawing.Point(342, 54);
+            this.txtFeed.Name = "txtFeed";
+            this.txtFeed.Size = new System.Drawing.Size(38, 20);
+            this.txtFeed.TabIndex = 40;
+            this.txtFeed.Text = "500";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(275, 74);
+            this.label11.Location = new System.Drawing.Point(299, 56);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(20, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Y: ";
+            this.label11.Size = new System.Drawing.Size(37, 13);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Feed :";
             // 
-            // label14
+            // button3
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(275, 49);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(20, 13);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "X: ";
+            this.button3.Location = new System.Drawing.Point(333, 75);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(79, 21);
+            this.button3.TabIndex = 38;
+            this.button3.Text = "G0 Z Scan";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtScanHeight
+            // 
+            this.txtScanHeight.Location = new System.Drawing.Point(302, 75);
+            this.txtScanHeight.Name = "txtScanHeight";
+            this.txtScanHeight.Size = new System.Drawing.Size(26, 20);
+            this.txtScanHeight.TabIndex = 37;
+            this.txtScanHeight.Text = "40";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(227, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Scan Height:";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(196, 79);
+            this.button2.Location = new System.Drawing.Point(143, 76);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 22);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Timer";
+            this.button2.Size = new System.Drawing.Size(79, 21);
+            this.button2.TabIndex = 35;
+            this.button2.Text = "G92 X0 Y0 Z0 ";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(106, 81);
+            this.button1.Location = new System.Drawing.Point(88, 76);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 20);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Render";
+            this.button1.Size = new System.Drawing.Size(51, 21);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "$H";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
-            // txtAngle
+            // btnStreamCode
             // 
-            this.txtAngle.Location = new System.Drawing.Point(55, 81);
-            this.txtAngle.Name = "txtAngle";
-            this.txtAngle.Size = new System.Drawing.Size(45, 20);
-            this.txtAngle.TabIndex = 15;
-            this.txtAngle.Text = "5";
+            this.btnStreamCode.Location = new System.Drawing.Point(88, 52);
+            this.btnStreamCode.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStreamCode.Name = "btnStreamCode";
+            this.btnStreamCode.Size = new System.Drawing.Size(180, 21);
+            this.btnStreamCode.TabIndex = 33;
+            this.btnStreamCode.Text = "Stream Generated Code";
+            this.btnStreamCode.UseVisualStyleBackColor = true;
+            this.btnStreamCode.Click += new System.EventHandler(this.btnStreamCode_Click);
             // 
-            // label10
+            // btn_camera_start
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 84);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 13);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Angle ";
+            this.btn_camera_start.Location = new System.Drawing.Point(217, 24);
+            this.btn_camera_start.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_camera_start.Name = "btn_camera_start";
+            this.btn_camera_start.Size = new System.Drawing.Size(51, 21);
+            this.btn_camera_start.TabIndex = 2;
+            this.btn_camera_start.Text = "Start";
+            this.btn_camera_start.UseVisualStyleBackColor = true;
+            this.btn_camera_start.Click += new System.EventHandler(this.btn_camera_start_Click);
             // 
-            // textBox2
+            // picBox_Video
             // 
-            this.textBox2.Location = new System.Drawing.Point(119, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(40, 20);
-            this.textBox2.TabIndex = 13;
-            this.textBox2.Text = "212";
+            this.picBox_Video.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picBox_Video.Location = new System.Drawing.Point(12, 117);
+            this.picBox_Video.Margin = new System.Windows.Forms.Padding(2);
+            this.picBox_Video.Name = "picBox_Video";
+            this.picBox_Video.Size = new System.Drawing.Size(693, 486);
+            this.picBox_Video.TabIndex = 1;
+            this.picBox_Video.TabStop = false;
             // 
-            // textBox1
+            // chk_Jog
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(40, 20);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "119";
+            this.chk_Jog.AutoSize = true;
+            this.chk_Jog.Location = new System.Drawing.Point(281, 26);
+            this.chk_Jog.Name = "chk_Jog";
+            this.chk_Jog.Size = new System.Drawing.Size(99, 17);
+            this.chk_Jog.TabIndex = 32;
+            this.chk_Jog.Text = "Enable Jogging";
+            this.chk_Jog.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // cmb_Camera
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(93, 58);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(20, 13);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Y: ";
+            this.cmb_Camera.FormattingEnabled = true;
+            this.cmb_Camera.Location = new System.Drawing.Point(88, 24);
+            this.cmb_Camera.Margin = new System.Windows.Forms.Padding(2);
+            this.cmb_Camera.Name = "cmb_Camera";
+            this.cmb_Camera.Size = new System.Drawing.Size(126, 21);
+            this.cmb_Camera.TabIndex = 1;
+            this.cmb_Camera.SelectedIndexChanged += new System.EventHandler(this.cmb_Camera_SelectedIndexChanged);
             // 
-            // label13
+            // lblMachinePosition
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(18, 58);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(20, 13);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "X: ";
+            this.lblMachinePosition.AutoSize = true;
+            this.lblMachinePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMachinePosition.Location = new System.Drawing.Point(482, 21);
+            this.lblMachinePosition.Name = "lblMachinePosition";
+            this.lblMachinePosition.Size = new System.Drawing.Size(74, 20);
+            this.lblMachinePosition.TabIndex = 31;
+            this.lblMachinePosition.Text = "X: Y: Z: ";
             // 
-            // tabPage5
+            // label66
             // 
-            this.tabPage5.Controls.Add(this.label57);
-            this.tabPage5.Controls.Add(this.picBox_Simulate);
-            this.tabPage5.Controls.Add(this.groupBox8);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(752, 669);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Simulate";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(384, 27);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(97, 13);
+            this.label66.TabIndex = 30;
+            this.label66.Text = "Machine Position : ";
             // 
-            // label57
+            // label17
             // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(20, 151);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(59, 13);
-            this.label57.TabIndex = 43;
-            this.label57.Text = "Default 0,0";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(9, 28);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(76, 13);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Select Camera";
             // 
-            // picBox_Simulate
+            // tabControl1
             // 
-            this.picBox_Simulate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.picBox_Simulate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picBox_Simulate.Location = new System.Drawing.Point(23, 173);
-            this.picBox_Simulate.Name = "picBox_Simulate";
-            this.picBox_Simulate.Size = new System.Drawing.Size(652, 475);
-            this.picBox_Simulate.TabIndex = 2;
-            this.picBox_Simulate.TabStop = false;
-            this.picBox_Simulate.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picBox_Simulate_MouseClick);
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.chkSimFlip);
-            this.groupBox8.Controls.Add(this.label60);
-            this.groupBox8.Controls.Add(this.txtSimHole0Y);
-            this.groupBox8.Controls.Add(this.label59);
-            this.groupBox8.Controls.Add(this.txtSimHole0X);
-            this.groupBox8.Controls.Add(this.txt_OverrideRotate);
-            this.groupBox8.Controls.Add(this.label58);
-            this.groupBox8.Controls.Add(this.label56);
-            this.groupBox8.Controls.Add(this.chk_DrawMovement);
-            this.groupBox8.Controls.Add(this.txtDrillSize);
-            this.groupBox8.Controls.Add(this.label54);
-            this.groupBox8.Controls.Add(this.txtCNCHeight);
-            this.groupBox8.Controls.Add(this.label55);
-            this.groupBox8.Controls.Add(this.txtCNCWidth);
-            this.groupBox8.Controls.Add(this.btn_RunSimulate);
-            this.groupBox8.Location = new System.Drawing.Point(12, 10);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(411, 118);
-            this.groupBox8.TabIndex = 1;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Simulate Options";
-            // 
-            // chkSimFlip
-            // 
-            this.chkSimFlip.AutoSize = true;
-            this.chkSimFlip.Checked = true;
-            this.chkSimFlip.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSimFlip.Location = new System.Drawing.Point(181, 44);
-            this.chkSimFlip.Name = "chkSimFlip";
-            this.chkSimFlip.Size = new System.Drawing.Size(42, 17);
-            this.chkSimFlip.TabIndex = 49;
-            this.chkSimFlip.Text = "Flip";
-            this.chkSimFlip.UseVisualStyleBackColor = true;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(291, 44);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(43, 13);
-            this.label60.TabIndex = 48;
-            this.label60.Text = "hle 0 Y:";
-            // 
-            // txtSimHole0Y
-            // 
-            this.txtSimHole0Y.Enabled = false;
-            this.txtSimHole0Y.Location = new System.Drawing.Point(340, 41);
-            this.txtSimHole0Y.Name = "txtSimHole0Y";
-            this.txtSimHole0Y.Size = new System.Drawing.Size(57, 20);
-            this.txtSimHole0Y.TabIndex = 47;
-            this.txtSimHole0Y.Text = "10";
-            this.txtSimHole0Y.TextChanged += new System.EventHandler(this.txtSimHole0Y_TextChanged);
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(291, 20);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(43, 13);
-            this.label59.TabIndex = 46;
-            this.label59.Text = "hle 0 X:";
-            // 
-            // txtSimHole0X
-            // 
-            this.txtSimHole0X.Enabled = false;
-            this.txtSimHole0X.Location = new System.Drawing.Point(340, 17);
-            this.txtSimHole0X.Name = "txtSimHole0X";
-            this.txtSimHole0X.Size = new System.Drawing.Size(57, 20);
-            this.txtSimHole0X.TabIndex = 45;
-            this.txtSimHole0X.Text = "10";
-            // 
-            // txt_OverrideRotate
-            // 
-            this.txt_OverrideRotate.Location = new System.Drawing.Point(121, 93);
-            this.txt_OverrideRotate.Name = "txt_OverrideRotate";
-            this.txt_OverrideRotate.Size = new System.Drawing.Size(31, 20);
-            this.txt_OverrideRotate.TabIndex = 44;
-            this.txt_OverrideRotate.Text = "0.0";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(22, 96);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(90, 13);
-            this.label58.TabIndex = 43;
-            this.label58.Text = "Override Rotation";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(46, 21);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(66, 13);
-            this.label56.TabIndex = 42;
-            this.label56.Text = "CNC Width :";
-            // 
-            // chk_DrawMovement
-            // 
-            this.chk_DrawMovement.AutoSize = true;
-            this.chk_DrawMovement.Location = new System.Drawing.Point(181, 21);
-            this.chk_DrawMovement.Name = "chk_DrawMovement";
-            this.chk_DrawMovement.Size = new System.Drawing.Size(104, 17);
-            this.chk_DrawMovement.TabIndex = 39;
-            this.chk_DrawMovement.Text = "Draw Movement";
-            this.chk_DrawMovement.UseVisualStyleBackColor = true;
-            this.chk_DrawMovement.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-            // 
-            // txtDrillSize
-            // 
-            this.txtDrillSize.Location = new System.Drawing.Point(121, 68);
-            this.txtDrillSize.Name = "txtDrillSize";
-            this.txtDrillSize.Size = new System.Drawing.Size(31, 20);
-            this.txtDrillSize.TabIndex = 37;
-            this.txtDrillSize.Text = "1.0";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(43, 71);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(69, 13);
-            this.label54.TabIndex = 36;
-            this.label54.Text = "Drill Diameter";
-            // 
-            // txtCNCHeight
-            // 
-            this.txtCNCHeight.Location = new System.Drawing.Point(121, 41);
-            this.txtCNCHeight.Name = "txtCNCHeight";
-            this.txtCNCHeight.Size = new System.Drawing.Size(31, 20);
-            this.txtCNCHeight.TabIndex = 35;
-            this.txtCNCHeight.Text = "200";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(43, 44);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(69, 13);
-            this.label55.TabIndex = 34;
-            this.label55.Text = "CNC Height :";
-            // 
-            // txtCNCWidth
-            // 
-            this.txtCNCWidth.Location = new System.Drawing.Point(121, 18);
-            this.txtCNCWidth.Name = "txtCNCWidth";
-            this.txtCNCWidth.Size = new System.Drawing.Size(31, 20);
-            this.txtCNCWidth.TabIndex = 33;
-            this.txtCNCWidth.Text = "200";
-            // 
-            // btn_RunSimulate
-            // 
-            this.btn_RunSimulate.Location = new System.Drawing.Point(338, 77);
-            this.btn_RunSimulate.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_RunSimulate.Name = "btn_RunSimulate";
-            this.btn_RunSimulate.Size = new System.Drawing.Size(68, 32);
-            this.btn_RunSimulate.TabIndex = 31;
-            this.btn_RunSimulate.Text = "Simulate";
-            this.btn_RunSimulate.UseVisualStyleBackColor = true;
-            this.btn_RunSimulate.Click += new System.EventHandler(this.btn_RunSimulate_Click);
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.dataGridView1);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(752, 669);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Drills";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DrillNum,
-            this.Size,
-            this.NumHoles,
-            this.Colour});
-            this.dataGridView1.Location = new System.Drawing.Point(22, 83);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(311, 81);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // DrillNum
-            // 
-            this.DrillNum.HeaderText = "#";
-            this.DrillNum.Name = "DrillNum";
-            this.DrillNum.Width = 50;
-            // 
-            // Size
-            // 
-            this.Size.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Size.HeaderText = "Size";
-            this.Size.Name = "Size";
-            this.Size.Width = 56;
-            // 
-            // NumHoles
-            // 
-            this.NumHoles.HeaderText = "Num Holes";
-            this.NumHoles.Name = "NumHoles";
-            // 
-            // Colour
-            // 
-            this.Colour.HeaderText = "Colour";
-            this.Colour.Name = "Colour";
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Location = new System.Drawing.Point(553, 11);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(719, 633);
+            this.tabControl1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1472, 720);
-            this.Controls.Add(this.gb_DrillFile);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1282, 657);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gb_DrillFile);
             this.DoubleBuffered = true;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "PCB DR (Drill Robot)";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Orig)).EndInit();
             this.gb_DrillFile.ResumeLayout(false);
             this.gb_DrillFile.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Video)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Box_Res)).EndInit();
-            this.gb_Rotation.ResumeLayout(false);
-            this.gb_Rotation.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Simulate)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Video)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1904,64 +1780,103 @@
         private System.Windows.Forms.GroupBox gb_DrillFile;
         private System.Windows.Forms.PictureBox pic_Box_Orig;
         private System.Windows.Forms.Button btn_Drill_File_Open;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label lbl_Extents_X_Max;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbl_Extents_Y_Max;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbl_NumHoles;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_Org_SetHole1;
         private System.Windows.Forms.Label lbl_DrillFileName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Label lbl_Extents_X_Min;
-        private System.Windows.Forms.Label lbl_Extents_Y_Min;
-        private System.Windows.Forms.Label lbl_Extents_dY;
-        private System.Windows.Forms.Label lbl_Extents_dX;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lbl_PicY;
-        private System.Windows.Forms.Label lbl_PicX;
-        private System.Windows.Forms.Label lbl_Scale_Y;
-        private System.Windows.Forms.Label lbl_Scale_X;
-        private System.Windows.Forms.CheckBox cb_Grid;
-        private System.Windows.Forms.Label lbl_Click_Y;
-        private System.Windows.Forms.Label lbl_Click_X;
+        private System.Windows.Forms.Label lbl_Hole0_Y;
+        private System.Windows.Forms.Label lbl_Hole0_X;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblHoleFound;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox cb_Flip;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox pic_Box_Res;
-        private System.Windows.Forms.GroupBox gb_Rotation;
-        private System.Windows.Forms.TextBox txtScale;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txt_Offset_Y;
-        private System.Windows.Forms.TextBox txt_Offset_X;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtAngle;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.PictureBox picBox_Video;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btn_camera_start;
-        private System.Windows.Forms.ComboBox cmb_Camera;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lbl_Angle;
+        private System.Windows.Forms.Label lbl_Dist;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label lbl_Hole2_Y;
+        private System.Windows.Forms.Label lbl_Hole2_X;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Button btn_Org_SetHole2;
+        private System.Windows.Forms.Label lbl_PCB_Angle;
+        private System.Windows.Forms.Label lbl_PCB_Scale;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Timer timerSerial;
+        private System.IO.Ports.SerialPort serialPort;
+        private System.Windows.Forms.Button btnGrabCamHole2;
+        private System.Windows.Forms.Button btnGrabCamHole0;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblPCBHole2_Y;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label lblPCBHole2_X;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblPCBHole0_Y;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPCBHole0_X;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.ComboBox cBCommand;
+        private System.Windows.Forms.Button btnGRBLReset;
+        private System.Windows.Forms.Button btnGRBLCommand4;
+        private System.Windows.Forms.Button btnGRBLCommand3;
+        private System.Windows.Forms.Button btnGRBLCommand2;
+        private System.Windows.Forms.Button btnGRBLCommand1;
+        private System.Windows.Forms.Button btnGRBLCommand0;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btnCheckGRBLResult;
+        private System.Windows.Forms.Button btnCheckGRBL;
+        private System.Windows.Forms.CheckBox cbStatus;
+        private System.Windows.Forms.Label lblSrA;
+        private System.Windows.Forms.Label lblSrLn;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label lblSrState;
+        private System.Windows.Forms.Label lblSrOv;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label lblSrPn;
+        private System.Windows.Forms.Label lblSrPos;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label lblSrFS;
+        private System.Windows.Forms.Label lblSrBf;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.RichTextBox rtbLog;
+        private System.Windows.Forms.ComboBox cbPort;
+        private System.Windows.Forms.ComboBox cbBaud;
+        private System.Windows.Forms.Button btnScanPort;
+        private System.Windows.Forms.Button btn_OpenPort;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DrillNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumHoles;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Colour;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.CheckBox chk_IncludeHoleInfo;
+        private System.Windows.Forms.CheckBox chk_LeaveZHeight;
+        private System.Windows.Forms.CheckBox chk_IgnorePause;
+        private System.Windows.Forms.CheckBox cb_Drill;
+        private System.Windows.Forms.TextBox txtDrillDepth;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox txtSafeZHeight;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Button btn_GenFile;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox txtCameraOffsetY;
+        private System.Windows.Forms.TextBox txtCameraOffsetX;
         private System.Windows.Forms.Label lbl_Offset_Y;
         private System.Windows.Forms.Label lbl_Offset_X;
         private System.Windows.Forms.Label label30;
@@ -1985,80 +1900,28 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox txt_Hole_Zero_Y;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox txt_Hole_Zero_X;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox txt_Hole_2_Y;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox txt_Hole_2_X;
-        private System.Windows.Forms.Label lbl_Angle;
-        private System.Windows.Forms.Label lbl_Dist;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label lbl_Hole2_Y;
-        private System.Windows.Forms.Label lbl_Hole2_X;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Button btn_Org_SetHole2;
-        private System.Windows.Forms.Label lblCamAngle;
-        private System.Windows.Forms.Label lblCamDist;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label lbl_Result_Angle;
-        private System.Windows.Forms.Label lbl_Result_Scale;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Button btn_GenFile;
-        private System.Windows.Forms.TextBox txtDrillDepth;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox txtSafeZHeight;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.CheckBox cb_Drill;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.TextBox txtCameraOffsetY;
-        private System.Windows.Forms.TextBox txtCameraOffsetX;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DrillNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumHoles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Colour;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label lblFinalScale;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.CheckBox chk_IncludeHoleInfo;
-        private System.Windows.Forms.CheckBox chk_LeaveZHeight;
-        private System.Windows.Forms.CheckBox chk_IgnorePause;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.CheckBox chk_DrawMovement;
-        private System.Windows.Forms.TextBox txtDrillSize;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox txtCNCHeight;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.TextBox txtCNCWidth;
-        private System.Windows.Forms.Button btn_RunSimulate;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.PictureBox picBox_Simulate;
-        private System.Windows.Forms.TextBox txt_OverrideRotate;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.TextBox txtSimHole0Y;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.TextBox txtSimHole0X;
-        private System.Windows.Forms.CheckBox chkSimFlip;
-        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button btn_camera_start;
+        private System.Windows.Forms.PictureBox picBox_Video;
+        private System.Windows.Forms.CheckBox chk_Jog;
+        private System.Windows.Forms.ComboBox cmb_Camera;
+        private System.Windows.Forms.Label lblMachinePosition;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Label lblPCBDist;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPCBRotationAngle;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnStreamCode;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtScanHeight;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtFeed;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnDrill;
     }
 }
 
