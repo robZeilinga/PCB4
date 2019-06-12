@@ -43,12 +43,12 @@ namespace PCB_DR
                 if (HoleUnit == Units.METRIC)
                 {
                     // 10,000 th of  MM
-                    FlippedYinmm = value.Y / 10000;
+                    FlippedYinmm =  Convert.ToDouble(value.Y) / 1000;
                 }
                 else
                 {
                     // 100,000 th of INCH
-                    FlippedYinmm = value.Y / 100000;
+                    FlippedYinmm = Convert.ToDouble(value.Y) / 100000;
                 }
             }
         }
@@ -139,12 +139,19 @@ namespace PCB_DR
                 double yDiff = Yinmm - HoleZero.Yinmm;
                 double flipped_yDiff = FlippedYinmm - HoleZero.FlippedYinmm;
 
+                if(scale != 1)
+                {
+                    xDiff = xDiff * scale;
+                    yDiff = yDiff * scale;
+                    flipped_yDiff = flipped_yDiff * scale;
+                }
+
                 double original_hole_angle = Math.Atan2(yDiff, xDiff) * 180.0 / Math.PI;
                 double flipped_angle = Math.Atan2(flipped_yDiff, xDiff) * 180.0 / Math.PI;
                 double dist1 = Math.Sqrt(Math.Pow(yDiff, 2) + Math.Pow(xDiff, 2));
                 double flipped_dist1 = Math.Sqrt(Math.Pow(flipped_yDiff, 2) + Math.Pow(xDiff, 2));
-                if (scale != 1) dist1 = dist1 * scale;
-                if (scale != 1) flipped_dist1 = flipped_dist1 * scale;
+                //if (scale != 1) dist1 = dist1 * scale;
+                //if (scale != 1) flipped_dist1 = flipped_dist1 * scale;
 
 
                 // Calculate Final Rotation Angle for This Hole

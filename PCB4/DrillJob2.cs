@@ -176,6 +176,20 @@ namespace PCB_DR
                 if (hle.Yinmm < dMIN_Y) dMIN_Y = hle.Yinmm;
 
             }
+            // set all holes to have min & maxs
+
+            foreach (Hole hle in Holes)
+            {
+                hle.ZeroPoint = new Point(hle.FlippedFilePoint.X - iMIN_X, hle.FlippedFilePoint.Y - iMIN_FY);
+                hle.Xinmm = hle.ZeroPoint.X / div;
+                hle.Yinmm = hle.ZeroPoint.Y / div;
+                if (hle.Xinmm > dMAX_X) dMAX_X = hle.Xinmm;
+                if (hle.Xinmm < dMIN_X) dMIN_X = hle.Xinmm;
+
+                if (hle.Yinmm > dMAX_Y) dMAX_Y = hle.Yinmm;
+                if (hle.Yinmm < dMIN_Y) dMIN_Y = hle.Yinmm;
+
+            }
         }
     }
 }

@@ -57,9 +57,10 @@ namespace PCB_DR
         double Offset_X = 0.0;
         double Offset_Y = 0.0;
         double Offset_zHeight = 0.0;
+        double HoleZeroYinmm = 0.0;
 
         // ==========================Angle Calcs =========================
-        double dist1 = 0.0;
+        double drillFileDist1 = 0.0;
         double dist2 = 0.0;
         double angle1 = 0.0;
         double angle2 = 0.0;
@@ -80,6 +81,14 @@ namespace PCB_DR
         Hole TargetHole;
         Hole hole2;
         DrillJob2 dj2;
+
+        //======================== Camera points ==========================
+        xyzPoint xyzPointCam0;
+        xyzPoint xyzPointCam2;
+
+        //======================== TestMovement ==========================
+        private Hole moveHole;
+
 
         Graphics gDrillFileHolePlot;
         Graphics g2;
@@ -569,6 +578,7 @@ namespace PCB_DR
 
         private void pic_Box_Orig_Click(object sender, EventArgs e)
         {
+
             MouseEventArgs me = (MouseEventArgs)e;
             //lbl_Click_X.Text = me.X.ToString();
             //lbl_Click_Y.Text = me.Y.ToString();
@@ -578,12 +588,38 @@ namespace PCB_DR
                 {
                     if (me.X > (hle.plot_Point.X - 5) && me.X < (hle.plot_Point.X + 5) && me.Y > (hle.plot_Point.Y - 5) && me.Y < (hle.plot_Point.Y + 5))
                     {
-                        DrawHole(gDrillFileHolePlot, pic_Box_Orig, hle.Xinmm, hle.Yinmm, dj2.Drills[hle.ToolNum] + 0.2, p, Pic1_Scale);
-                        currentHole = hle;
+                        if (chkMoveToClickedHole.Checked)
+                        {
+                            // move to this hole 
+                            moveHole = hle;
+                            moveToHole(moveHole);
+                        }
+                        else
+                        {
+                            DrawHole(gDrillFileHolePlot, pic_Box_Orig, hle.Xinmm, hle.Yinmm, dj2.Drills[hle.ToolNum] + 0.2, p, Pic1_Scale);
+                            currentHole = hle;
+                        }
                         break;
                     }
                 }
             }
+        }
+
+        private void moveToHole(Hole moveHole)
+        {
+            // calculate CNC co-ords for this hole 
+
+            moveHole.HoleZero = holeZero;
+            moveHole.rotationAngle = result_angle;
+            moveHole.scale = result_Scale;
+            //hle.rotate(result_angle, 0, 0, result_Scale);
+            moveHole.rotate(result_angle);
+
+            //string cmd = "G0 X" + (moveHole.RotatedX + Gcode_Offset_X + _offsetX).ToString("N3") + " Y" + (hle.RotatedY + Gcode_Offset_Y + _offsetY - (HoleZeroYinmm /* * result_Scale*/ )).ToString("N3") + System.Environment.NewLine);
+
+
+
+            //throw new NotImplementedException();
         }
 
         private void pic_Box_Res_Click(object sender, EventArgs e)
@@ -779,9 +815,9 @@ namespace PCB_DR
             if (currentHole != null && currentHole != holeZero)
             {
                 hole2 = currentHole;
-                lbl_Hole2_X.Text = currentHole.Xinmm.ToString("0.000");
+                lbl_Hole2_X.Text = currentHole.Xinmm.ToString("N3");
                 //                lbl_Hole2_Y.Text = currentHole.FlippedResolvedY.ToString();
-                lbl_Hole2_Y.Text = currentHole.Yinmm.ToString("0.000");
+                lbl_Hole2_Y.Text = currentHole.Yinmm.ToString("N3");
                 checkBothHolesSelected();
             }
         }
@@ -791,9 +827,11 @@ namespace PCB_DR
             if (currentHole != null)
             {
                 holeZero = currentHole;
-                lbl_Hole0_X.Text = currentHole.Xinmm.ToString("0.000");
+                HoleZeroYinmm = currentHole.Yinmm;
+              // if (HoleZeroYinmm != 0) HoleZeroYinmm -= 1;
+                lbl_Hole0_X.Text = currentHole.Xinmm.ToString("N3");
                 //                lbl_Click_Y.Text = currentHole.FlippedResolvedY.ToString();
-                lbl_Hole0_Y.Text = currentHole.Yinmm.ToString("0.000");
+                lbl_Hole0_Y.Text = currentHole.Yinmm.ToString("N3");
                 checkBothHolesSelected();
             }
         }
@@ -802,13 +840,17 @@ namespace PCB_DR
         {
             if (holeZero != null && hole2 != null)
             {
-                double diffX = hole2.Xinmm - holeZero.Xinmm;
-                double diffY = hole2.Yinmm - holeZero.Yinmm;
-                dist1 = Math.Sqrt(Math.Pow(diffX, 2) + Math.Pow(diffY, 2));
+                double diffX = hole2.FilePoint.X - holeZero.FilePoint.X;
+                double diffY = hole2.FilePoint.Y - holeZero.FilePoint.Y;
 
-                lbl_Dist.Text = dist1.ToString("0.000");
-                angle1 = Math.Atan2(diffY, diffX) / (Math.PI / 180);
-                lbl_Angle.Text = angle1.ToString("0.000");
+
+                //double diffX = hole2.Xinmm - holeZero.Xinmm;
+                //double diffY = hole2.Yinmm - holeZero.Yinmm;
+                drillFileDist1 = Math.Sqrt(Math.Pow(diffX, 2) + Math.Pow(diffY, 2));
+
+                lbl_Dist.Text = (drillFileDist1/1000).ToString("N3");
+                angle1 = Math.Atan2(diffY, diffX) / (Math.PI / 180) * -1;
+                lbl_Angle.Text = angle1.ToString("N3");
 
             }
         }
@@ -817,23 +859,35 @@ namespace PCB_DR
         {
             if(PCBHole0 && PCBHole1)
             {
-                double hole2_Y = double.Parse(lblPCBHole2_Y.Text.Trim());
-                double hole2_X = double.Parse(lblPCBHole2_X.Text.Trim());
-                double hole0_X = double.Parse(lblPCBHole0_X.Text.Trim());
-                double hole0_Y = double.Parse(lblPCBHole0_Y.Text.Trim());
-                double xdiff = hole2_X - hole0_X;
-                double ydiff = hole2_Y - hole0_Y;
+
+
+                //double hole2_Y = double.Parse(lblPCBHole2_Y.Text.Trim());
+                //double hole2_X = double.Parse(lblPCBHole2_X.Text.Trim());
+                //double hole0_X = double.Parse(lblPCBHole0_X.Text.Trim());
+                //double hole0_Y = double.Parse(lblPCBHole0_Y.Text.Trim());
+                //
+                //double xdiff = hole2_X - hole0_X;
+                //double ydiff = hole2_Y - hole0_Y;
+                double xdiff =  xyzPointCam2.X*1000 - xyzPointCam0.X*1000;
+                double ydiff = xyzPointCam2.Y*1000 - xyzPointCam0.Y*1000;
+
                 dist2 = Math.Sqrt(Math.Pow(xdiff, 2) + Math.Pow(ydiff, 2));
                 angle2 = Math.Atan2(ydiff, xdiff) / (Math.PI / 180);
-                lbl_PCB_Angle.Text = angle2.ToString("0.000");
+                lbl_PCB_Angle.Text = angle2.ToString("N3");
 
-                result_Scale = dist2 / dist1;
-                lblPCBDist.Text = dist2.ToString("0.000");
+                //result_Scale = dist2 / drillFileDist1;
+                result_Scale = drillFileDist1 / dist2 ;
+                lblPCBDist.Text = (dist2/1000).ToString("N3");
 
-                lbl_PCB_Scale.Text = result_Scale.ToString("0.0000");
+                lbl_PCB_Scale.Text = result_Scale.ToString("N3");
                 double rotAngle = angle2 - angle1;
                 result_angle = rotAngle;
-                lblPCBRotationAngle.Text = rotAngle.ToString("0.000");
+                lblPCBRotationAngle.Text = rotAngle.ToString("N3");
+                chkMoveToClickedHole.Enabled = true;
+            }
+            else
+            {
+                chkMoveToClickedHole.Enabled = false;
             }
         }
 
@@ -845,6 +899,10 @@ namespace PCB_DR
             // hole Zero from Camera
             double hole0_Cam_X = double.Parse(lblPCBHole0_X.Text.Trim());
             double hole0_Cam_Y = double.Parse(lblPCBHole0_Y.Text.Trim());
+
+         //   double hole0_Cam_X = xyzPointCam2.X;
+         //   double hole0_Cam_Y = xyzPointCam2.Y;
+
 
             // hole Zero from dRill File
             double hole0_Drill_X = holeZero.Xinmm;
@@ -860,8 +918,8 @@ namespace PCB_DR
             if (bSafeHeight && bDrillDepth)
             {
 
-                string safeZHeight = dSafeZHeight.ToString("0.000");
-                string drillDepth = dDrillDepth.ToString("0.000");
+                string safeZHeight = dSafeZHeight.ToString("N3");
+                string drillDepth = dDrillDepth.ToString("N3");
                 double _offsetX = 0.0;
                 double _offsetY = 0.0;
 
@@ -882,7 +940,7 @@ namespace PCB_DR
                 richTextBox1.AppendText("G0 Z" + safeZHeight + System.Environment.NewLine);
                 richTextBox1.AppendText("; ---------------------------------" + System.Environment.NewLine);
                 richTextBox1.AppendText("; Hole Zero " + System.Environment.NewLine);
-                richTextBox1.AppendText("G0 X" + (holeZero.Xinmm + Gcode_Offset_X + _offsetX).ToString("0.000") + " Y" + (holeZero.FlippedYinmm + Gcode_Offset_Y + _offsetY).ToString("0.000") + System.Environment.NewLine);
+                richTextBox1.AppendText("G0 X" + (holeZero.Xinmm + Gcode_Offset_X + _offsetX).ToString("N3") + " Y" + (holeZero.FlippedYinmm + Gcode_Offset_Y + _offsetY).ToString("N3") + System.Environment.NewLine);
                 richTextBox1.AppendText("G0 Z" + drillDepth + System.Environment.NewLine);
                 richTextBox1.AppendText("G0 Z" + safeZHeight + System.Environment.NewLine);
 
@@ -896,8 +954,15 @@ namespace PCB_DR
                     hle.HoleZero = holeZero;
                     hle.rotationAngle = result_angle;
                     hle.scale = result_Scale;
-                    hle.rotate(result_angle, 0, 0, 1);
-                    richTextBox1.AppendText("G0 X" + (hle.RotatedX + Gcode_Offset_X + _offsetX).ToString("0.000") + " Y" + (hle.RotatedY + Gcode_Offset_Y  + _offsetY).ToString("0.000") + System.Environment.NewLine);
+                    //hle.rotate(result_angle, 0, 0, result_Scale);
+                    hle.rotate(result_angle);
+                    richTextBox1.AppendText("; ----------------------------------------" + System.Environment.NewLine);
+                        richTextBox1.AppendText("; hle.Rotatedy : " + hle.RotatedY + System.Environment.NewLine);
+                        richTextBox1.AppendText("; _offsetY : " + _offsetY + System.Environment.NewLine);
+                        richTextBox1.AppendText("; Gcode_Offset_Y : " + Gcode_Offset_Y + System.Environment.NewLine);
+                        richTextBox1.AppendText("; HoleZeroFlippedYinmm  : " + HoleZeroYinmm + System.Environment.NewLine);
+                        richTextBox1.AppendText("; scaled HoleZeroFlippedYinmm  : " + HoleZeroYinmm * result_Scale + System.Environment.NewLine);
+                        richTextBox1.AppendText("G0 X" + (hle.RotatedX + Gcode_Offset_X + _offsetX).ToString("N3") + " Y" + (hle.RotatedY + Gcode_Offset_Y  + _offsetY /* - (HoleZeroYinmm * result_Scale )*/).ToString("N3") + System.Environment.NewLine);
                     //richTextBox1.AppendText("G4 0.5" + System.Environment.NewLine);
                     richTextBox1.AppendText("G0 Z" + drillDepth + System.Environment.NewLine);
                     richTextBox1.AppendText("G0 Z" + safeZHeight + System.Environment.NewLine);
@@ -1744,7 +1809,7 @@ namespace PCB_DR
             lblSrState.Text = status;
 
             lblSrPos.Text = posWork.Print(false, grbl.axisB || grbl.axisC); // show actual work position
-            lblMachinePosition.Text = "X : " + posWork.X.ToString("0.000") + System.Environment.NewLine + "Y : " + posWork.Y.ToString("0.000") + System.Environment.NewLine + "Z : " + posWork.Z.ToString("0.000");
+            lblMachinePosition.Text = "X : " + posWork.X.ToString("N3") + System.Environment.NewLine + "Y : " + posWork.Y.ToString("N3") + System.Environment.NewLine + "Z : " + posWork.Z.ToString("N3");
             if (grblStateNow != grblStateLast) { grblStateChanged(); }
             OnRaisePosEvent(new PosEventArgs(posWork, posMachine, grblStateNow, machineState, mParserState, rxString));
 
@@ -2526,8 +2591,12 @@ namespace PCB_DR
         {
             if (holeZero != null && hole2 != null)
             {
-                lblPCBHole0_X.Text = posWork.X.ToString("0.000");
-                lblPCBHole0_Y.Text = posWork.Y.ToString("0.000");
+                requestSend("G92 X0 Y0 Z0");
+
+                xyzPointCam0 = new xyzPoint(0,0,0);
+                
+                lblPCBHole0_X.Text = posWork.X.ToString("N3");
+                lblPCBHole0_Y.Text = posWork.Y.ToString("N3");
                 PCBHole0 = true;
                 checkBothPCBHolesSelected();
             }
@@ -2541,8 +2610,10 @@ namespace PCB_DR
         {
             if (holeZero != null && hole2 != null)
             {
-                lblPCBHole2_X.Text = posWork.X.ToString("0.000");
-                lblPCBHole2_Y.Text = posWork.Y.ToString("0.000");
+                xyzPointCam2 = posWork;
+
+                lblPCBHole2_X.Text = posWork.X.ToString("N3");
+                lblPCBHole2_Y.Text = posWork.Y.ToString("N3");
                 PCBHole1 = true;
                 checkBothPCBHolesSelected();
             }
@@ -2554,6 +2625,7 @@ namespace PCB_DR
         }
 
         bool stopStream = false;
+
         private void btnStreamCode_Click(object sender, EventArgs e)
         {
             stopStream = false;
@@ -2616,6 +2688,32 @@ namespace PCB_DR
             {
                 ActiveDrills.Remove(int.Parse(btn.Text));
                 btn.BackColor = Color.White;
+            }
+        }
+
+        private void btnMove_Click(object sender, EventArgs e)
+        {
+            // do we have a hole as current Hole? 
+
+        }
+
+        private void btnBounceHome0_Click(object sender, EventArgs e)
+        {
+            if (PCBHole0)
+            {
+                // HOME
+                requestSend("G28");
+                requestSend("G0 X0 Y0");
+            }
+        }
+
+        private void btnBounceHome2_Click(object sender, EventArgs e)
+        {
+            if (PCBHole1)
+            {
+                // HOME
+                requestSend("G28");
+                requestSend("G0 X" + xyzPointCam2.X + " Y" + xyzPointCam2.Y);
             }
         }
 

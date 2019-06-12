@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pic_Box_Orig = new System.Windows.Forms.PictureBox();
             this.gb_DrillFile = new System.Windows.Forms.GroupBox();
@@ -63,6 +63,7 @@
             this.btnGrabCamHole0 = new System.Windows.Forms.Button();
             this.btnGrabCamHole2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkMoveToClickedHole = new System.Windows.Forms.CheckBox();
             this.lblPCBRotationAngle = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblPCBDist = new System.Windows.Forms.Label();
@@ -161,6 +162,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnBounceHome2 = new System.Windows.Forms.Button();
+            this.btnBounceHome0 = new System.Windows.Forms.Button();
             this.txtFeed = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -468,7 +471,7 @@
             // 
             // btnGrabCamHole0
             // 
-            this.btnGrabCamHole0.Location = new System.Drawing.Point(8, 20);
+            this.btnGrabCamHole0.Location = new System.Drawing.Point(12, 47);
             this.btnGrabCamHole0.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrabCamHole0.Name = "btnGrabCamHole0";
             this.btnGrabCamHole0.Size = new System.Drawing.Size(66, 21);
@@ -479,7 +482,7 @@
             // 
             // btnGrabCamHole2
             // 
-            this.btnGrabCamHole2.Location = new System.Drawing.Point(135, 20);
+            this.btnGrabCamHole2.Location = new System.Drawing.Point(12, 74);
             this.btnGrabCamHole2.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrabCamHole2.Name = "btnGrabCamHole2";
             this.btnGrabCamHole2.Size = new System.Drawing.Size(66, 21);
@@ -490,16 +493,15 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.chkMoveToClickedHole);
             this.groupBox3.Controls.Add(this.lblPCBRotationAngle);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.lblPCBDist);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.lbl_PCB_Angle);
-            this.groupBox3.Controls.Add(this.btnGrabCamHole2);
             this.groupBox3.Controls.Add(this.label46);
             this.groupBox3.Controls.Add(this.lbl_PCB_Scale);
             this.groupBox3.Controls.Add(this.lblPCBHole2_Y);
-            this.groupBox3.Controls.Add(this.btnGrabCamHole0);
             this.groupBox3.Controls.Add(this.label47);
             this.groupBox3.Controls.Add(this.label67);
             this.groupBox3.Controls.Add(this.lblPCBHole2_X);
@@ -516,6 +518,18 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Camera Holes";
+            // 
+            // chkMoveToClickedHole
+            // 
+            this.chkMoveToClickedHole.AutoSize = true;
+            this.chkMoveToClickedHole.Enabled = false;
+            this.chkMoveToClickedHole.Location = new System.Drawing.Point(110, 17);
+            this.chkMoveToClickedHole.Margin = new System.Windows.Forms.Padding(2);
+            this.chkMoveToClickedHole.Name = "chkMoveToClickedHole";
+            this.chkMoveToClickedHole.Size = new System.Drawing.Size(132, 17);
+            this.chkMoveToClickedHole.TabIndex = 22;
+            this.chkMoveToClickedHole.Text = "Move To Clicked Hole";
+            this.chkMoveToClickedHole.UseVisualStyleBackColor = true;
             // 
             // lblPCBRotationAngle
             // 
@@ -1032,14 +1046,14 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillNum,
@@ -1048,14 +1062,14 @@
             this.Colour});
             this.dataGridView1.Location = new System.Drawing.Point(18, 14);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Size = new System.Drawing.Size(353, 105);
             this.dataGridView1.TabIndex = 2;
             // 
@@ -1146,6 +1160,8 @@
             // chk_LeaveZHeight
             // 
             this.chk_LeaveZHeight.AutoSize = true;
+            this.chk_LeaveZHeight.Checked = true;
+            this.chk_LeaveZHeight.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chk_LeaveZHeight.Location = new System.Drawing.Point(181, 49);
             this.chk_LeaveZHeight.Name = "chk_LeaveZHeight";
             this.chk_LeaveZHeight.Size = new System.Drawing.Size(147, 17);
@@ -1166,6 +1182,8 @@
             // cb_Drill
             // 
             this.cb_Drill.AutoSize = true;
+            this.cb_Drill.Checked = true;
+            this.cb_Drill.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_Drill.Location = new System.Drawing.Point(30, 121);
             this.cb_Drill.Name = "cb_Drill";
             this.cb_Drill.Size = new System.Drawing.Size(43, 17);
@@ -1179,7 +1197,7 @@
             this.txtDrillDepth.Name = "txtDrillDepth";
             this.txtDrillDepth.Size = new System.Drawing.Size(31, 20);
             this.txtDrillDepth.TabIndex = 37;
-            this.txtDrillDepth.Text = "36.5";
+            this.txtDrillDepth.Text = "1";
             // 
             // label48
             // 
@@ -1196,7 +1214,7 @@
             this.txtSafeZHeight.Name = "txtSafeZHeight";
             this.txtSafeZHeight.Size = new System.Drawing.Size(31, 20);
             this.txtSafeZHeight.TabIndex = 35;
-            this.txtSafeZHeight.Text = "36.5";
+            this.txtSafeZHeight.Text = "0";
             // 
             // label39
             // 
@@ -1548,15 +1566,19 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnBounceHome2);
+            this.tabPage2.Controls.Add(this.btnBounceHome0);
             this.tabPage2.Controls.Add(this.txtFeed);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.txtScanHeight);
             this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.btnGrabCamHole2);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.btnStreamCode);
             this.tabPage2.Controls.Add(this.btn_camera_start);
+            this.tabPage2.Controls.Add(this.btnGrabCamHole0);
             this.tabPage2.Controls.Add(this.picBox_Video);
             this.tabPage2.Controls.Add(this.chk_Jog);
             this.tabPage2.Controls.Add(this.cmb_Camera);
@@ -1572,18 +1594,40 @@
             this.tabPage2.Text = "Camera";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnBounceHome2
+            // 
+            this.btnBounceHome2.Location = new System.Drawing.Point(82, 74);
+            this.btnBounceHome2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBounceHome2.Name = "btnBounceHome2";
+            this.btnBounceHome2.Size = new System.Drawing.Size(66, 21);
+            this.btnBounceHome2.TabIndex = 42;
+            this.btnBounceHome2.Text = "Bounce2";
+            this.btnBounceHome2.UseVisualStyleBackColor = true;
+            this.btnBounceHome2.Click += new System.EventHandler(this.btnBounceHome2_Click);
+            // 
+            // btnBounceHome0
+            // 
+            this.btnBounceHome0.Location = new System.Drawing.Point(82, 47);
+            this.btnBounceHome0.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBounceHome0.Name = "btnBounceHome0";
+            this.btnBounceHome0.Size = new System.Drawing.Size(66, 21);
+            this.btnBounceHome0.TabIndex = 41;
+            this.btnBounceHome0.Text = "Bounce0";
+            this.btnBounceHome0.UseVisualStyleBackColor = true;
+            this.btnBounceHome0.Click += new System.EventHandler(this.btnBounceHome0_Click);
+            // 
             // txtFeed
             // 
-            this.txtFeed.Location = new System.Drawing.Point(342, 54);
+            this.txtFeed.Location = new System.Drawing.Point(406, 51);
             this.txtFeed.Name = "txtFeed";
             this.txtFeed.Size = new System.Drawing.Size(38, 20);
             this.txtFeed.TabIndex = 40;
-            this.txtFeed.Text = "500";
+            this.txtFeed.Text = "2000";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(299, 56);
+            this.label11.Location = new System.Drawing.Point(363, 53);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 13);
             this.label11.TabIndex = 39;
@@ -1591,7 +1635,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(333, 75);
+            this.button3.Location = new System.Drawing.Point(397, 72);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(79, 21);
@@ -1602,7 +1646,7 @@
             // 
             // txtScanHeight
             // 
-            this.txtScanHeight.Location = new System.Drawing.Point(302, 75);
+            this.txtScanHeight.Location = new System.Drawing.Point(366, 72);
             this.txtScanHeight.Name = "txtScanHeight";
             this.txtScanHeight.Size = new System.Drawing.Size(26, 20);
             this.txtScanHeight.TabIndex = 37;
@@ -1611,7 +1655,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(227, 77);
+            this.label4.Location = new System.Drawing.Point(291, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 36;
@@ -1619,7 +1663,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(143, 76);
+            this.button2.Location = new System.Drawing.Point(207, 73);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(79, 21);
@@ -1630,7 +1674,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(88, 76);
+            this.button1.Location = new System.Drawing.Point(152, 73);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(51, 21);
@@ -1641,7 +1685,7 @@
             // 
             // btnStreamCode
             // 
-            this.btnStreamCode.Location = new System.Drawing.Point(88, 52);
+            this.btnStreamCode.Location = new System.Drawing.Point(152, 49);
             this.btnStreamCode.Margin = new System.Windows.Forms.Padding(2);
             this.btnStreamCode.Name = "btnStreamCode";
             this.btnStreamCode.Size = new System.Drawing.Size(180, 21);
@@ -1674,6 +1718,8 @@
             // chk_Jog
             // 
             this.chk_Jog.AutoSize = true;
+            this.chk_Jog.Checked = true;
+            this.chk_Jog.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chk_Jog.Location = new System.Drawing.Point(281, 26);
             this.chk_Jog.Name = "chk_Jog";
             this.chk_Jog.Size = new System.Drawing.Size(99, 17);
@@ -1695,7 +1741,7 @@
             // 
             this.lblMachinePosition.AutoSize = true;
             this.lblMachinePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMachinePosition.Location = new System.Drawing.Point(482, 21);
+            this.lblMachinePosition.Location = new System.Drawing.Point(505, 20);
             this.lblMachinePosition.Name = "lblMachinePosition";
             this.lblMachinePosition.Size = new System.Drawing.Size(74, 20);
             this.lblMachinePosition.TabIndex = 31;
@@ -1704,7 +1750,7 @@
             // label66
             // 
             this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(384, 27);
+            this.label66.Location = new System.Drawing.Point(402, 26);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(97, 13);
             this.label66.TabIndex = 30;
@@ -1922,6 +1968,9 @@
         private System.Windows.Forms.TextBox txtFeed;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnDrill;
+        private System.Windows.Forms.CheckBox chkMoveToClickedHole;
+        private System.Windows.Forms.Button btnBounceHome2;
+        private System.Windows.Forms.Button btnBounceHome0;
     }
 }
 
