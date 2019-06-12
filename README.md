@@ -54,5 +54,8 @@ C# on a windows OS!
 13. Generate gcode and stream to robot.
 14. Sit back and enjoy a cup of coffee while the robot drills your PCB accurately.
 
+## Issues
+1. Slight alignment errors on some holes ( scaling?) 
+
 ## Attributions
 The Video Cross-Hair overlay and a number of other functions were obtained from the excellent project by SvenHB [https://github.com/svenhb/GRBL-Plotter]
